@@ -1,0 +1,100 @@
+﻿2020-03-18 13:40:46,599 [INFO] databases.crmsdb: Database connected
+2020-03-18 13:40:46,599 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 13:40:47,023 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "e:\10.Python\khoailangtotet\databases\crmsdb.py", line 26, in getdata
+    listobj = list[crms_tokhai_nothue()]
+TypeError: 'type' object is not subscriptable
+2020-03-18 13:40:47,024 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 13:40:47,024 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 13:40:47,213 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 13:41:09,566 [INFO] databases.crmsdb: Database connected
+2020-03-18 13:41:09,566 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 13:41:10,653 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 13:41:10,654 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 13:41:11,476 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:11:43,979 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:11:43,980 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:12:07,244 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "e:\10.Python\khoailangtotet\databases\crmsdb.py", line 21, in getdata
+    results = self.db.execquery(
+  File "e:\10.Python\khoailangtotet\databases\dbhelpers.py", line 47, in execquery
+    self.__connect__()
+  File "e:\10.Python\khoailangtotet\databases\dbhelpers.py", line 36, in __connect__
+    self.conn = cx_Oracle.connect(self.username, self.password, self.hostname)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+2020-03-18 14:12:07,245 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:12:07,246 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:12:07,864 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:12:30,557 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:12:30,557 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:12:31,283 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:12:31,283 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:12:31,877 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:16:28,331 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:16:28,332 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:16:28,803 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:19:11,671 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:19:11,671 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:19:12,135 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:19:12,136 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:19:12,340 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:20:31,366 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:20:31,367 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:20:31,860 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:20:31,861 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:20:32,072 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:21:24,188 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:21:24,188 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:21:24,627 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "e:\10.Python\khoailangtotet\databases\crmsdb.py", line 26, in getdata
+    listobj = list[crms_tokhai_nothue]
+TypeError: 'type' object is not subscriptable
+2020-03-18 14:21:24,629 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:21:24,629 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:21:24,940 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "e:\10.Python\khoailangtotet\databases\crmsdb.py", line 50, in getdata_proc
+    listobj = list[crms_tokhai_nothue]
+TypeError: 'type' object is not subscriptable
+2020-03-18 14:21:24,940 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:25:38,659 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:25:38,659 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:25:39,082 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "e:\10.Python\khoailangtotet\databases\crmsdb.py", line 50, in getdata_proc
+    listobj = list[crms_tokhai_nothue: object]
+TypeError: 'type' object is not subscriptable
+2020-03-18 14:25:39,083 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:28:52,383 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:28:52,383 [INFO] databases.crmsdb: Bắt đầu getdata_proc
+2020-03-18 14:28:52,853 [INFO] databases.crmsdb: kết thúc : getdata_proc id = 141
+2020-03-18 14:29:35,685 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:29:35,685 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:29:36,848 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:39:01,616 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:39:01,616 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:39:02,212 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:40:04,484 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:40:04,484 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:40:05,387 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:41:08,124 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:41:08,125 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:41:08,576 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:53:58,330 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:53:58,330 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:54:19,853 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "e:\10.Python\khoailangtotet\databases\crmsdb.py", line 21, in getdata
+    results = self.db.execquery(
+  File "e:\10.Python\khoailangtotet\databases\dbhelpers.py", line 47, in execquery
+    self.__connect__()
+  File "e:\10.Python\khoailangtotet\databases\dbhelpers.py", line 36, in __connect__
+    self.conn = cx_Oracle.connect(self.username, self.password, self.hostname)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+2020-03-18 14:54:19,855 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-18 14:54:52,536 [INFO] databases.crmsdb: Database connected
+2020-03-18 14:54:52,536 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-18 14:54:53,375 [INFO] databases.crmsdb: kết thúc : getdata!
