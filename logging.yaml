@@ -8,7 +8,7 @@ handlers:
         class: logging.handlers.RotatingFileHandler
         level: DEBUG
         formatter: standard
-        filename: 'E:\10.Python\khoailangtotet\log.txt'
+        filename: 'E:\10.Python\git_svn\khoailangtotet\log.txt'
         maxBytes: 1000000
         backupCount: 3
         encoding: 'utf8'

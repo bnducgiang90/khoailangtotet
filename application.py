@@ -23,6 +23,7 @@ def main():
     for obj in lstobj:
         print("ID : {}, MA_DV : {}".format(obj.ID,obj.MA_DV))
     
+    print("succeed")
 
 if __name__ == '__main__':
     main()
