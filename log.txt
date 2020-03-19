@@ -1,3 +1,24 @@
 ﻿2020-03-18 16:22:23,096 [INFO] databases.crmsdb: Database connected
 2020-03-18 16:22:23,098 [INFO] databases.crmsdb: Bắt đầu getdata
 2020-03-18 16:22:25,062 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-19 15:32:45,356 [INFO] databases.crmsdb: Database connected
+2020-03-19 15:32:45,357 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-19 15:33:08,351 [ERROR] databases.crmsdb: Lỗi :
+Traceback (most recent call last):
+  File "E:\10.Python\git_svn\khoailangtotet\databases\crmsdb.py", line 21, in getdata
+    results = self.db.execquery(
+  File "E:\10.Python\git_svn\khoailangtotet\databases\dbhelpers.py", line 47, in execquery
+    self.__connect__()
+  File "E:\10.Python\git_svn\khoailangtotet\databases\dbhelpers.py", line 36, in __connect__
+    self.conn = cx_Oracle.connect(self.username, self.password, self.hostname)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+2020-03-19 15:33:08,353 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-19 15:35:16,693 [INFO] databases.crmsdb: Database connected
+2020-03-19 15:35:16,693 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-19 15:35:18,084 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-19 15:37:56,144 [INFO] databases.crmsdb: Database connected
+2020-03-19 15:37:56,145 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-19 15:37:56,791 [INFO] databases.crmsdb: kết thúc : getdata!
+2020-03-19 15:49:40,332 [INFO] databases.crmsdb: Database connected
+2020-03-19 15:49:40,332 [INFO] databases.crmsdb: Bắt đầu getdata
+2020-03-19 15:49:40,993 [INFO] databases.crmsdb: kết thúc : getdata!

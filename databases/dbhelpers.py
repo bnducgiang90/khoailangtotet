@@ -47,7 +47,16 @@ class oracledb:
         self.__connect__()
         self.cur.execute(sql,params)
         cols = fields(self.cur)
-        data=self.cur.fetchall()
+        data=self.cur.fetchall() # đoạn này có thể thay bằng fetchmany(batch_size)
+        self.__disconnect__()
+        result = {"col" : cols, "data" : data}
+        return result
+
+    def execquerybatch(self,sql, batch_size, **params):
+        self.__connect__()
+        self.cur.execute(sql,params)
+        cols = fields(self.cur)
+        data=self.cur.fetchmany(batch_size) # đoạn này có thể thay bằng fetchmany(batch_size)
         self.__disconnect__()
         result = {"col" : cols, "data" : data}
         return result
@@ -57,11 +66,33 @@ class oracledb:
         self.cur.execute(sql,params)
         self.__disconnect__()
 
-    def execusetrans(self, sql,**params):
+    def exectrans(self, sql,**params):
         try:
             self.__connect__()
             self.conn.begin()
             self.cur.execute(sql,params)
+            self.conn.commit()
+        except cx_Oracle.Error as ex:
+            self.conn.rollback()
+        finally:
+            self.__disconnect__()
+
+    ## thực hiện batch sql ( DML một lô dữ liệu (datas truyền vào là một list của tuple))
+    ## datas = [(a,b,c), (b,c,d), ... (...)]
+    ## sql truyền vào dạng : insert into values(:1,:2,:3) tùy thuộc độ dài của tuple
+    def execnonquerybatch(self, sql,datas,batch_size: int):
+        try:
+            self.__connect__()
+            self.conn.begin()
+            databatchs = []
+            for data in data:
+                databatchs.append(data)
+                if len(databatchs) % batch_size ==0:
+                    self.cur.executemany(sql,databatchs)
+                    databatchs = []
+            if databatchs:    
+                self.cur.executemany(sql,databatchs)
+                
             self.conn.commit()
         except cx_Oracle.Error as ex:
             self.conn.rollback()
@@ -78,7 +109,21 @@ class oracledb:
         #Cursor.callfunc(name, returnType, parameters=[], keywordParameters = {})
         self.cur.callproc(procname,keywordParameters=params)
         cols = fields(pref_cursor)
-        data=pref_cursor.fetchall()
+        data = pref_cursor.fetchall() # đoạn này có thể thay bằng fetchmany(batch_size)
+        self.__disconnect__()
+        result = {"col" : cols, "data" : data}
+        return result
+
+    def execprocbatch(self,procname,batch_size,**params):
+        #print(params)
+        self.__connect__()
+        pref_cursor = self.conn.cursor()
+        params['pref_cursor'] = pref_cursor
+        #print(params)
+        #Cursor.callfunc(name, returnType, parameters=[], keywordParameters = {})
+        self.cur.callproc(procname,keywordParameters=params)
+        cols = fields(pref_cursor)
+        data = pref_cursor.fetchmany(batch_size) # đoạn này có thể thay bằng fetchmany(batch_size)
         self.__disconnect__()
         result = {"col" : cols, "data" : data}
         return result
