@@ -6,24 +6,24 @@ config_path_ini = os.path.join(rootdir, 'properties.ini')
 config = configparser.ConfigParser()
 config.read(config_path_ini)
 
-class oracleconfig(object):
+class oracleconfig:
       hostname = config["oracle"]["hostname"]
       username = config["oracle"]["username"]
       password = config["oracle"]["password"]
 
-class postgresconfig(object):
+class postgresconfig:
       host = config["postgresql"]["host"]
       user = config["postgresql"]["user"]
       passwd = config["postgresql"]["passwd"]
       db = config["postgresql"]["db"]
 
-class mysqlconfig(object):
+class mysqlconfig:
       host = config["mysql"]["host"]
       user = config["mysql"]["user"]
       passwd = config["mysql"]["passwd"]
       db = config["mysql"]["db"]
 
-class logconfig(object):
+class logconfig:
       pathfile = config["logging"]["path"]
       logconfigfile  = config["logging"]["logconfigfile"]
 
@@ -31,7 +31,7 @@ class logconfig(object):
 # password = "Oracle123"
 # hostname = "10.15.68.159:1521/FRAUDB"
 settings = {}
-class configutils(object):
+class configutils:
 
     @staticmethod
     def getsettings():

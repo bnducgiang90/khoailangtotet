@@ -14,7 +14,6 @@ def main():
 
     ## khởi tạo logging
     logging_config = filehelper.readyalmfile(logconfig.logconfigfile)
-    #print(logging_config)
     logging.config.dictConfig(logging_config)
     ## end khởi tạo logging
     
