@@ -2,10 +2,11 @@ import sys
 # đoạn này để gọi import root folder của project vào module này : để gọi được đến các folder khác
 sys.path.append('.')
 
-import logging
+
 from databases.dbhelpers import *
 from datamodels.crms.xephangdoanhnghiep import *
-from utils.objecthelpers import  helper
+from utils.objecthelpers import helper
+import logging
 logger = logging.getLogger(__name__)
 
 
@@ -60,5 +61,3 @@ class crmsdatabase:
             logger.exception("Lỗi :")
         finally:
             logger.info("kết thúc : getdata_proc id = {}".format(id))
-    
-    
