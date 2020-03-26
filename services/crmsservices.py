@@ -6,12 +6,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 from databases.crmsdb import *
-from datamodels.crms.xephangdoanhnghiep import *
+from datamodels.crms.qlt_params import *
 
 
 class servicecrms:
-    
-    def getdata(self):
+
+    def getdata(self) -> []:
         db = crmsdatabase()
         lstobj = db.getdata()
         return lstobj

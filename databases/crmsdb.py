@@ -2,7 +2,7 @@ import sys
 # đoạn này để gọi import root folder của project vào module này : để gọi được đến các folder khác
 sys.path.append('.')
 from databases.dbhelpers import *
-from datamodels.crms.xephangdoanhnghiep import *
+from datamodels.crms.qlt_params import *
 from utils.objecthelpers import helper
 import logging
 logger = logging.getLogger(__name__)

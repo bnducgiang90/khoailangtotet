@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9311d57a-7e8a-4629-b514-60d2bba97f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datamodels/crms/qlt_params.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datamodels/crms/qlt_thongtins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databases/crmsdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/databases/crmsdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/dbhelpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/databases/dbhelpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datamodels/crms/xephangdoanhnghiep.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/crmsservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/crmsservices.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,8 +35,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager" selected="Python.application">
     <configuration name="application" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -39,6 +49,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/application.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
@@ -60,6 +71,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/services/process.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
@@ -86,6 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584329989737</updated>
+      <workItem from="1585213888451" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1584607235410</created>
@@ -94,8 +107,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584607235410</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1584610609223</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584610609223</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
@@ -106,13 +129,68 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="85" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584330087220" />
-    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1584607233732">
+    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1584610607934">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584607233732" />
-    <state x="325" y="90" key="SettingsEditor" timestamp="1584608384324">
+    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584610607934" />
+    <state width="888" height="459" key="DebuggerActiveHint" timestamp="1584612757733">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="325" y="90" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584608384324" />
+    <state width="888" height="459" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1584612757733" />
+    <state width="1579" height="276" key="GridCell.Tab.0.bottom" timestamp="1584670493466">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584670493466" />
+    <state width="1579" height="276" key="GridCell.Tab.0.center" timestamp="1584670493465">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584670493465" />
+    <state width="1579" height="276" key="GridCell.Tab.0.left" timestamp="1584670493465">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584670493465" />
+    <state width="1579" height="276" key="GridCell.Tab.0.right" timestamp="1584670493465">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584670493465" />
+    <state width="1579" height="276" key="GridCell.Tab.1.bottom" timestamp="1584670493466">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584670493466" />
+    <state width="1579" height="276" key="GridCell.Tab.1.center" timestamp="1584670493466">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584670493466" />
+    <state width="1579" height="276" key="GridCell.Tab.1.left" timestamp="1584670493466">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584670493466" />
+    <state width="1579" height="276" key="GridCell.Tab.1.right" timestamp="1584670493466">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1579" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584670493466" />
+    <state x="410" y="0" key="SettingsEditor" timestamp="1585215081422">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="410" y="0" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585215081422" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1584610752953">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1584610752953" />
+    <state width="808" height="438" key="XDebugger.FullValuePopup" timestamp="1584612395860">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="808" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1584612395860" />
+    <state x="371" y="166" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1584611433292">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="371" y="166" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1584611433292" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="srvcrms" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
