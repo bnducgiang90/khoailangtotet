@@ -85,7 +85,7 @@ class oracledb:
             self.__connect__()
             self.conn.begin()
             databatchs = []
-            for data in data:
+            for data in datas:
                 databatchs.append(data)
                 if len(databatchs) % batch_size ==0:
                     self.cur.executemany(sql,databatchs)

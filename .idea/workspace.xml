@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9311d57a-7e8a-4629-b514-60d2bba97f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datamodels/crms/qlt_params.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamodels/crms/qlt_thongtins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/crmsdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/databases/crmsdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamodels/crms/xephangdoanhnghiep.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/crmsservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/crmsservices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/dbhelpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/databases/dbhelpers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +31,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Python.application">
     <configuration name="application" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="khoailangtotet" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -98,7 +95,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584329989737</updated>
-      <workItem from="1585213888451" duration="1190000" />
+      <workItem from="1585213888451" duration="1653000" />
+      <workItem from="1585215588495" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1584607235410</created>
@@ -114,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584610609223</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit">
+      <created>1585215127339</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585215127339</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,10 +134,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="85" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584330087220" />
-    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1584610607934">
+    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1585215125810">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1584610607934" />
+    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585215125810" />
     <state width="888" height="459" key="DebuggerActiveHint" timestamp="1584612757733">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -169,18 +174,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1579" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584670493466" />
-    <state x="410" y="0" key="SettingsEditor" timestamp="1585215081422">
+    <state x="350" y="45" key="SettingsEditor" timestamp="1585215802583">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="410" y="0" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585215081422" />
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1584610752953">
+    <state x="350" y="45" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585215802583" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1585215140044">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1584610752953" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1585215140044" />
     <state width="808" height="438" key="XDebugger.FullValuePopup" timestamp="1584612395860">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="808" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1584612395860" />
+    <state x="494" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1585215610600">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="494" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585215610600" />
     <state x="371" y="166" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1584611433292">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
