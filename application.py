@@ -19,9 +19,15 @@ def main():
     ## end khởi tạo logging
 
     srvcrms = servicecrms()
-    lstobj: [] = srvcrms.getdata()
-    for obj in lstobj:
-        print("ID : {}, MA_DV : {}".format(obj.ID, obj.MA_DV))
+    hsdn_params: {} = srvcrms.get_hsdn_params()
+    print("HSDN:")
+    for key, value in hsdn_params.items():
+        print("key : {}, values : {}".format(key, len(value)))
+
+    hsvp_params: {} = srvcrms.get_hsvp_params()
+    print("HSVP:")
+    for key, value in hsvp_params.items():
+        print("key : {}, values : {}".format(key, len(value)))
 
     print("succeed")
 
