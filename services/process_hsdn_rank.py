@@ -8,6 +8,7 @@ from typing import List
 from services.crmsservices import *
 from utils.constants import *
 from datamodels.crms.qlt_tieuchi_hsdn import  *
+from datamodels.crms.qlt_params import *
 
 class process_rank_hsdn:
     def __init__(self, lstHSDNs : [], params_hsdn : {}):
@@ -16,6 +17,7 @@ class process_rank_hsdn:
         self.HSDNs = lstHSDNs
         self.qlt_hsdn_xhdns : List[qlt_hsdn_xhdn] = []
 
+    # thực hiện tính điểm, điểm phạt, điểm max của danh sách doanh nghiệp theo tiêu chí
     def get_qlt_hsdn_xhdns(self):
 
         for qlt_ttdn in self.HSDNs:
@@ -44,6 +46,7 @@ class process_rank_hsdn:
 
         return self.qlt_hsdn_xhdns
 
+    # thực hiện tính điểm, điểm phạt, điểm max của danh sách doanh nghiệp theo tiêu chí
     def tinh_giatri_diem_tieuchi_hsdn(self):
         tieuchi_hsdns = {}
         for qlt_ttdn in self.HSDNs:
@@ -63,6 +66,7 @@ class process_rank_hsdn:
                     objqlt_tieuchi_hsdn.GIA_TRI = getattr(qlt_ttdn, param.COLUMNNAME.upper())
                 else:
                     logger.warning("QLT_THONGTINDOANHNGHIEP không attr {}".format(param.COLUMNNAME))
+
                 self.set_diem_tieuchi_hsdn(objqlt_tieuchi_hsdn)
                 lstqlt_tieuchi_hsdns.append(objqlt_tieuchi_hsdn)
 

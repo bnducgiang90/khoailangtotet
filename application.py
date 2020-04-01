@@ -73,11 +73,19 @@ def main():
                     kl2.NK_XK, kl2.ID_NHOM, kl2.DIEMNHOM)
                 )
 
-        print("qlt_tytrong_phanloai_nhoms: ")
-        for kl2 in item.get_qlt_tytrong_phanloai_nhoms():
+        # print("qlt_tytrong_phanloai_nhoms: ")
+        # for kl2 in item.get_qlt_tytrong_phanloai_nhoms():
+        #     print(
+        #         "NK_XK: {}; ID_NHOM: {}; TYTRONG: {}".format(
+        #             kl2.NK_XK, kl2.ID_NHOM, kl2.TYTRONG)
+        #     )
+
+        print("qlt_diem_phanloaicuoicung_nhoms: ")
+        values = item.get_qlt_diem_phanloaicuoicung_nhoms(hsdn_params)
+        for kl2 in values:
             print(
-                "NK_XK: {}; ID_NHOM: {}; TYTRONG: {}".format(
-                    kl2.NK_XK, kl2.ID_NHOM, kl2.TYTRONG)
+                "NK_XK: {}; ID_NHOM: {}; DIEM_PLCC: {}".format(
+                    kl2.NK_XK, kl2.ID_NHOM, kl2.DIEM_PLCC)
             )
 
     print("succeed")
