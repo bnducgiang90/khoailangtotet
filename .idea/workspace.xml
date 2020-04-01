@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9311d57a-7e8a-4629-b514-60d2bba97f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datamodels/crms/qlt_tieuchi_hsdn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/process_hsdn_rank.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/process_hsvp_rank.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databases/crmsdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/databases/crmsdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamodels/crms/qlt_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/crms/qlt_params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamodels/crms/qlt_thongtins.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/crms/qlt_thongtins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/crmsservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/crmsservices.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/process.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/process_ranking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/objecthelpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/objecthelpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/process_hsdn_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/process_hsdn_rank.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +99,7 @@
       <workItem from="1585566174182" duration="214000" />
       <workItem from="1585618857988" duration="20734000" />
       <workItem from="1585704871112" duration="7319000" />
-      <workItem from="1585714060761" duration="12088000" />
+      <workItem from="1585714060761" duration="12114000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1584607235410</created>
@@ -147,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585566301405</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit">
+      <created>1585732193273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585732193273</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,10 +158,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="85" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584330087220" />
-    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1585566318607">
+    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1585732190738">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585566318607" />
+    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585732190738" />
     <state width="1149" height="459" key="DebuggerActiveHint" timestamp="1585716063643">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

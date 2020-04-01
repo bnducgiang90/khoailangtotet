@@ -34,7 +34,7 @@ class process_rank_hsdn:
                 elif hasattr(qlt_ttdn, param.COLUMNNAME.upper()) :
                     objqlt_tieuchi_hsdn.GIA_TRI = getattr(qlt_ttdn, param.COLUMNNAME.upper())
                 else:
-                    logger.warning("QLT_THONGTINDOANHNGHIEP không attr {}".format(param.COLUMNNAME))
+                    logger.warning("QLT_THONGTINDOANHNGHIEP không có attr {}".format(param.COLUMNNAME))
 
                 self.set_diem_tieuchi_hsdn(objqlt_tieuchi_hsdn)
                 lstqlt_tieuchi_hsdns.append(objqlt_tieuchi_hsdn)
