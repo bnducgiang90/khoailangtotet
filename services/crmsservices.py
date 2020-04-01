@@ -6,21 +6,21 @@ import logging
 logger = logging.getLogger(__name__)
 
 from databases.crmsdb import *
-from datamodels.crms.qlt_params import *
 
 
-class servicecrms:
+class crmsservice:
     def __init__(self):
-        self.db = crmsdatabase()
+        self.db = crmsdb()
 
 ##get thông tin doanh nghiệp
-    def get_hsdns(self) -> []:
-        lstHSDNs = self.db.get_hsdns()
+    def get_hsdns(self,FromRowID: int, ToRowID: int, IsTinhLai: int) -> []:
+        lstHSDNs = self.db.get_hsdns(FromRowID, ToRowID, IsTinhLai)
         return lstHSDNs
 
     def get_hsdn_params(self) -> {}:
         hsdn_params = self.db.get_hsdn_params()
         return hsdn_params
+
 ##END get thông tin doanh nghiệp
 
 ##get thông tin hồ sơ vi phạm
@@ -33,6 +33,8 @@ class servicecrms:
         return hsvp_params
 
 ##END get thông tin doanh nghiệp
+
+
 
 #test:
     def getdata(self) -> []:

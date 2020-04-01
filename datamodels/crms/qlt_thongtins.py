@@ -8,8 +8,8 @@ class QLT_THONGTINDOANHNGHIEP:
         self.SO_NGAY_THANH_LAP_DN_UNK = 0
         self.DIA_CHI_TRU_SO_DN = 0
         self.QUYEN_SO_HUU_TRU_SO_DN = 0
-        self.SO_LUONG_NHAN_VIEN_DN = 0
-        self.SO_LUONG_NHAN_VIEN_DN_UNK = 0
+        self.SO_LUONG_NHAN_VIEN_DN_GC_SXXK = 0
+        self.SO_LUONG_NHAN_VIEN_DN_KD = 0
         self.DN_GC_SXXK = 0
         self.QUOC_GIA_HOAT_DONG_DN = ""
         self.LOAI_HINH_DN = ""

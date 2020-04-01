@@ -5,21 +5,22 @@ from databases.dbhelpers import *
 from datamodels.crms.qlt_params import *
 from datamodels.crms.qlt_thongtins import *
 from utils.objecthelpers import helper
+from utils.constants import *
 import logging
 logger = logging.getLogger(__name__)
 
 
-class crmsdatabase:
+class crmsdb:
     def __init__(self):
         self.db = oracledb()
         logger.info("Database connected")
 
 
 #get thông tin doanh nghiệp
-    def get_hsdns(self):
+    def get_hsdns(self,FromRowID: int, ToRowID: int, IsTinhLai: int):
         try:
             logger.info("Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP")
-            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GET_THONGTINDOANHNGHIEP")
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GET_THONGTINDOANHNGHIEP",p_FromRowID = FromRowID, p_ToRowID = ToRowID, p_IsTinhLai = IsTinhLai)
             cols = result["col"]
             datas = result["data"]
             lstHSDNs = []  # khởi tạo một list QLT_THONGTINDOANHNGHIEP
@@ -51,7 +52,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsdn_params["QLT_PARAMS_HSDN_TC_MOTA"] = lstPARAMS
+            hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_TC_MOTA] = lstPARAMS
             #END QLT_PARAMS_HSDN_TC_MOTA
 
             #2. QLT_PARAMS_HSDN_DGTC
@@ -65,7 +66,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsdn_params["QLT_PARAMS_HSDN_DGTC"] = lstPARAMS
+            hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_DGTC] = lstPARAMS
             # END QLT_PARAMS_HSDN_DGTC
 
             #3. QLT_PARAMS_HSDN_PLDCC
@@ -79,7 +80,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsdn_params["QLT_PARAMS_HSDN_PLDCC"] = lstPARAMS
+            hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PLDCC] = lstPARAMS
             # END QLT_PARAMS_HSDN_PLDCC
 
             # 4. QLT_PARAMS_HSDN_PTAD
@@ -93,7 +94,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsdn_params["QLT_PARAMS_HSDN_PTAD"] = lstPARAMS
+            hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PTAD] = lstPARAMS
             # END QLT_PARAMS_HSDN_PLDCC
 
             return hsdn_params
@@ -140,7 +141,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_HSPLTN"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_HSPLTN] = lstPARAMS
             # END QLT_PARAMS_HSVP_HSPLTN
 
             # 2. QLT_PARAMS_HSVP_HSPLXNK
@@ -154,7 +155,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_HSPLXNK"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_HSPLXNK] = lstPARAMS
             # END QLT_PARAMS_HSVP_HSPLXNK
 
             # 3. QLT_PARAMS_HSVP_PLCLT
@@ -168,7 +169,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_PLCLT"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLCLT] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLCLT
 
             # 4. QLT_PARAMS_HSVP_PLHSVP
@@ -182,7 +183,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_PLHSVP"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLHSVP] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLHSVP
 
             # 5. QLT_PARAMS_HSVP_PLSLVP
@@ -196,7 +197,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_PLSLVP"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLSLVP] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLSLVP
 
             # 6. QLT_PARAMS_HSVP_PLTLVP
@@ -210,7 +211,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_PLTLVP"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLTLVP] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLTLVP
 
             # 7. QLT_PARAMS_HSVP_PLVP
@@ -224,7 +225,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_PLVP"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVP] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLVP
 
             # 8. QLT_PARAMS_HSVP_PLVPKTK
@@ -238,7 +239,7 @@ class crmsdatabase:
                 helper.toObject(cols, row, objParam)
                 lstPARAMS.append(objParam)
 
-            hsvp_params["QLT_PARAMS_HSVP_PLVPKTK"] = lstPARAMS
+            hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVPKTK] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLVPKTK
 
             return hsvp_params

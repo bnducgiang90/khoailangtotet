@@ -42,6 +42,9 @@ class QLT_PARAMS_HSDN_TC_MOTA:
         self.COLUMNNAME = ""
         self.ISSUDUNG = 0
         self.ISORDER = 0
+        self.NK_XK = 0
+        self.PHUONGTHUCAPDUNG = 0
+
 
 class QLT_PARAMS_HSDN_DGTC:
     def __init__(self):
@@ -51,6 +54,7 @@ class QLT_PARAMS_HSDN_DGTC:
         self.DIEMSO = 0
         self.DIEMPHAT = 0
         self.MOTA = ""
+
 
 class QLT_PARAMS_HSDN_PLDCC:
     def __init__(self):
