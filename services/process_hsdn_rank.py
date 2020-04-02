@@ -7,7 +7,7 @@ from typing import List
 
 from services.crmsservices import *
 from utils.constants import *
-from datamodels.crms.qlt_tieuchi_hsdn import  *
+from datamodels.crms.qlt_hsdn_xhdn import  *
 from datamodels.crms.qlt_params import *
 
 class process_rank_hsdn:
@@ -15,64 +15,38 @@ class process_rank_hsdn:
         self.srvcrms = crmsservice()
         self.hsdn_params = params_hsdn
         self.HSDNs = lstHSDNs
-        self.qlt_hsdn_xhdns : List[qlt_hsdn_xhdn] = []
+        #self.qlt_hsdn_xhdns : List[qlt_hsdn_xhdn] = []
 
     # thực hiện tính điểm, điểm phạt, điểm max của danh sách doanh nghiệp theo tiêu chí
+    @property
     def get_qlt_hsdn_xhdns(self):
+        _qlt_hsdn_xhdns: List[qlt_hsdn_xhdn] = []
 
         for qlt_ttdn in self.HSDNs:
-            lstqlt_tieuchi_hsdns = []
+            lstKLs = []
 
             for param in self.hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_TC_MOTA]:
-                objqlt_tieuchi_hsdn = qlt_tieuchi_hsdn()
-                objqlt_tieuchi_hsdn.MA_DN = qlt_ttdn.MA_DN
-                objqlt_tieuchi_hsdn.ID_TIEUCHI = param.ID_TIEUCHI
-                objqlt_tieuchi_hsdn.ID_NHOM = param.ID_NHOM
-                objqlt_tieuchi_hsdn.NK_XK = param.NK_XK
-                objqlt_tieuchi_hsdn.PHUONGTHUCAPDUNG = param.PHUONGTHUCAPDUNG
+                kl = qlt_tieuchi_hsdn()
+                kl.MA_DN = qlt_ttdn.MA_DN
+                kl.ID_TIEUCHI = param.ID_TIEUCHI
+                kl.ID_NHOM = param.ID_NHOM
+                kl.NK_XK = param.NK_XK
+                kl.PHUONGTHUCAPDUNG = param.PHUONGTHUCAPDUNG
 
                 if hasattr(qlt_ttdn, param.COLUMNNAME) :
-                    objqlt_tieuchi_hsdn.GIA_TRI = getattr(qlt_ttdn,param.COLUMNNAME)
+                    kl.GIA_TRI = getattr(qlt_ttdn,param.COLUMNNAME)
                 elif hasattr(qlt_ttdn, param.COLUMNNAME.upper()) :
-                    objqlt_tieuchi_hsdn.GIA_TRI = getattr(qlt_ttdn, param.COLUMNNAME.upper())
+                    kl.GIA_TRI = getattr(qlt_ttdn, param.COLUMNNAME.upper())
                 else:
                     logger.warning("QLT_THONGTINDOANHNGHIEP không có attr {}".format(param.COLUMNNAME))
 
-                self.set_diem_tieuchi_hsdn(objqlt_tieuchi_hsdn)
-                lstqlt_tieuchi_hsdns.append(objqlt_tieuchi_hsdn)
+                self.set_diem_tieuchi_hsdn(kl)
+                lstKLs.append(kl)
 
-            objqlt_hsdn_xhdn = qlt_hsdn_xhdn(qlt_ttdn.MA_DN, lstqlt_tieuchi_hsdns)
-            self.qlt_hsdn_xhdns.append(objqlt_hsdn_xhdn)
+            objqlt_hsdn_xhdn = qlt_hsdn_xhdn(qlt_ttdn.MA_DN, lstKLs,  self.hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PLDCC])
+            _qlt_hsdn_xhdns.append(objqlt_hsdn_xhdn)
 
-        return self.qlt_hsdn_xhdns
-
-    # thực hiện tính điểm, điểm phạt, điểm max của danh sách doanh nghiệp theo tiêu chí
-    def tinh_giatri_diem_tieuchi_hsdn(self):
-        tieuchi_hsdns = {}
-        for qlt_ttdn in self.HSDNs:
-            lstqlt_tieuchi_hsdns = []
-
-            for param in self.hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_TC_MOTA]:
-                objqlt_tieuchi_hsdn = qlt_tieuchi_hsdn()
-                objqlt_tieuchi_hsdn.MA_DN = qlt_ttdn.MA_DN
-                objqlt_tieuchi_hsdn.ID_TIEUCHI = param.ID_TIEUCHI
-                objqlt_tieuchi_hsdn.ID_NHOM = param.ID_NHOM
-                objqlt_tieuchi_hsdn.NK_XK = param.NK_XK
-                objqlt_tieuchi_hsdn.PHUONGTHUCAPDUNG = param.PHUONGTHUCAPDUNG
-
-                if hasattr(qlt_ttdn, param.COLUMNNAME) :
-                    objqlt_tieuchi_hsdn.GIA_TRI = getattr(qlt_ttdn,param.COLUMNNAME)
-                elif hasattr(qlt_ttdn, param.COLUMNNAME.upper()) :
-                    objqlt_tieuchi_hsdn.GIA_TRI = getattr(qlt_ttdn, param.COLUMNNAME.upper())
-                else:
-                    logger.warning("QLT_THONGTINDOANHNGHIEP không attr {}".format(param.COLUMNNAME))
-
-                self.set_diem_tieuchi_hsdn(objqlt_tieuchi_hsdn)
-                lstqlt_tieuchi_hsdns.append(objqlt_tieuchi_hsdn)
-
-            tieuchi_hsdns[qlt_ttdn.MA_DN] = lstqlt_tieuchi_hsdns
-
-        return tieuchi_hsdns
+        return _qlt_hsdn_xhdns
 
     # thực hiện tính điểm, điểm phạt, điểm max của từng tiêu chí
     def set_diem_tieuchi_hsdn(self, objqlt_tieuchi_hsdn: qlt_tieuchi_hsdn):
@@ -104,13 +78,4 @@ class process_rank_hsdn:
 
         except Exception as ex:
             logger.exception("Lỗi Giá trị {} ID_TIEUCHI : {}".format( objqlt_tieuchi_hsdn.GIA_TRI, objqlt_tieuchi_hsdn.ID_TIEUCHI))
-
-
-    ## tính tổng điểm phân loại của nhóm
-    def tinh_diemphanloai_nhomtieuchi(self):
-        pass
-
-    ## tính tỷ trọng phân loại của nhóm
-    def tinh_tytrongphanloai_nhomtieuchi(self):
-        pass
 

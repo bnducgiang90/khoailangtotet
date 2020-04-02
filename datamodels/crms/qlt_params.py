@@ -127,6 +127,11 @@ class QLT_PARAMS_HSVP_PLVPKTK:
         self.GIATRI = 0.0
         self.DIEM = 0.0
 
+class QLT_HSVP_SOTOKHAIDUOCTHONGQUAN:
+    def __init__(self):
+        self.MA_DN = ""
+        self.SOTOKHAIDUOCTHONGQUAN = 0
+
 ## thông tin bảng params QLT_PARAMS_PLXEPHANG
 class QLT_PARAMS_PLXEPHANG:
     def __init__(self):

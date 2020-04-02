@@ -15,6 +15,25 @@ class crmsdb:
         self.db = oracledb()
         logger.info("Database connected")
 
+#get thông tin params SP_GET_QLT_PARAMS_PLXEPHANG
+    def get_params_plxephangs(self):
+        try:
+            logger.info("Bắt đầu - lấy thông tin QLT_PARAMS_PLXEPHANG")
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GET_QLT_PARAMS_PLXEPHANG")
+            cols = result["col"]
+            datas = result["data"]
+            lstplxephangs = []  # khởi tạo một list QLT_PARAMS_PLXEPHANG
+            for row in datas:
+                kl = QLT_PARAMS_PLXEPHANG()
+                helper.toObject(cols, row, kl)
+                lstplxephangs.append(kl)
+
+            return lstplxephangs
+
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("kết thúc - lấy thông tin QLT_PARAMS_PLXEPHANG")
 
 #get thông tin doanh nghiệp
     def get_hsdns(self,FromRowID: int, ToRowID: int, IsTinhLai: int):
@@ -241,6 +260,20 @@ class crmsdb:
 
             hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVPKTK] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLVPKTK
+
+            # 8. QLT_HSVP_SOTOKHAIDUOCTHONGQUAN
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GET_QLT_SOTK_THONGQUAN")
+            cols = result["col"]
+            datas = result["data"]
+            lstPARAMS = []  # khởi tạo một list QLT_HSVP_SOTOKHAIDUOCTHONGQUAN
+            objParam = None
+            for row in datas:
+                objParam = QLT_HSVP_SOTOKHAIDUOCTHONGQUAN()
+                helper.toObject(cols, row, objParam)
+                lstPARAMS.append(objParam)
+
+            hsvp_params[const_hsvp_params.QLT_HSVP_SOTOKHAIDUOCTHONGQUAN] = lstPARAMS
+            # END QLT_HSVP_SOTOKHAIDUOCTHONGQUAN
 
             return hsvp_params
         except Exception as ex:
