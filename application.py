@@ -101,6 +101,10 @@ def main():
     _qlt_hsvp_xhdns: List[qlt_hsvp_xhdn] = procs_hsvp_rank.process_qlt_hsvp_xhdn()
     for kl in _qlt_hsvp_xhdns:
         print("MA_DN: {} số lượng {} điểm: {}".format(kl.MA_DN, kl.qlt_hsvp_tokhais.SOLUONG_KHONGTK, kl.qlt_hsvp_tokhais.DIEM_KHONGTK))
+        _qlt_hsvp_nhoms: List[qlt_hsvp_nhom] = kl.qlt_hsvp_nhoms()
+        for kl2 in _qlt_hsvp_nhoms:
+            print("ID_NHOM: {}, NK_NK: {}, HSPLTN:{}, HSPLVP: {},  SOLUONG: {}".format(kl2.ID_NHOM, kl2.NK_XK, kl2.HSPLTN, kl2.HSPLVP, kl2.SOLUONG_NHOM))
+
 
     # lst_qlt_tieuchi_hsvps = procs_hsvp_rank.qlt_tieuchi_hsvps
     #

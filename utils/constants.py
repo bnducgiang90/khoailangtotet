@@ -6,6 +6,8 @@ class const_crms:
     LOAI_HINH_XK = 2;
     QLT_PARAMS_PLXEPHANG = "QLT_PARAMS_PLXEPHANG"
     CO_TK = 1
+    ID_NHOM_DEFAULT = "C"
+    ISAPDUNGCHENHLECHTHUE = 1
 
 ## HSDN params
 class const_hsdn_params:

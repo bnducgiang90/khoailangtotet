@@ -360,3 +360,309 @@
 2020-04-02 20:54:09,995 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
 2020-04-02 20:54:09,996 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
 2020-04-02 20:54:10,185 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:18:22,358 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:18:22,358 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:18:25,573 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:18:25,574 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:18:25,762 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:18:25,780 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:19:00,723 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:19:00,723 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:19:08,665 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:21:18,288 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:21:18,288 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:21:19,235 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:21:19,235 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:21:19,564 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:21:19,653 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:21:31,459 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:21:31,460 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:21:31,638 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:22:29,761 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:22:29,761 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:22:30,726 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:22:30,726 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:22:30,929 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:22:30,937 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:22:42,470 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:22:42,470 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:22:42,653 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:24:57,406 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:24:57,406 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:24:58,358 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:24:58,358 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:24:58,527 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:24:58,540 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:25:45,259 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:25:45,259 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:25:45,446 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:28:57,267 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:28:57,267 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:28:58,246 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:28:58,247 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:28:58,382 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:28:58,391 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:29:08,168 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:29:08,169 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:29:08,446 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:33:12,713 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:33:12,714 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:33:14,726 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:33:14,726 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:33:14,983 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:33:14,990 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:33:17,675 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:33:17,676 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:33:17,855 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:39:07,987 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:39:07,988 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:39:10,126 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:39:10,126 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:39:10,291 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:39:10,303 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:39:12,678 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:39:12,679 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:39:12,865 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:46:25,086 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:46:25,086 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:46:26,030 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:46:26,030 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:46:26,199 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:46:26,212 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:46:28,969 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:46:28,970 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:46:29,159 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:47:15,054 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:47:15,054 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:47:16,069 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:47:16,070 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:47:16,249 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:47:16,272 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:47:19,562 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:47:19,564 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:47:19,744 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:48:35,847 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:48:35,848 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:48:36,832 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:48:36,832 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:48:36,986 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:48:36,994 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:48:39,918 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:48:39,918 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:48:40,136 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:52:09,782 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:52:09,782 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:52:10,828 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:52:10,828 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:52:10,988 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:52:11,003 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:52:13,855 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:52:13,855 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:52:14,043 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:54:50,410 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:54:50,411 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:54:51,356 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:54:51,357 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:54:51,529 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:54:51,552 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:54:54,372 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:54:54,373 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:54:54,542 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:56:19,194 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:56:19,194 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:56:20,599 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:56:20,600 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:56:20,784 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:56:20,792 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:56:23,324 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:56:23,325 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:56:23,504 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:58:06,580 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:58:06,580 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:58:07,510 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:58:07,511 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:58:08,150 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:58:08,161 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:58:11,168 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:58:11,169 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:58:11,342 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:59:19,885 [INFO] databases.crmsdb: Database connected
+2020-04-02 22:59:19,885 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 22:59:22,260 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 22:59:22,260 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:59:23,159 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 22:59:23,183 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 22:59:31,797 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 22:59:31,798 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 22:59:32,179 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:02:40,649 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:02:40,650 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:02:41,642 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:02:41,643 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:02:41,826 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:02:41,845 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:02:44,537 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:02:44,538 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:02:44,863 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:15:26,556 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:15:26,556 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:15:28,257 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:15:28,257 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:15:28,420 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:15:28,429 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:15:31,205 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:15:31,205 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:15:31,416 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:17:01,259 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:17:01,260 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:17:02,160 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:17:02,161 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:17:02,324 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:17:02,333 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:17:05,073 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:17:05,074 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:17:05,271 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:18:19,662 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:18:19,663 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:18:20,677 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:18:20,678 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:18:20,877 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:18:20,914 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:18:23,984 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:18:23,985 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:18:24,193 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:21:55,743 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:21:55,743 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:21:56,904 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:21:56,905 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:21:57,123 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:21:57,177 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:22:00,056 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:22:00,057 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:22:00,263 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:28:03,768 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:28:03,771 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:28:04,724 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:28:04,724 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:28:04,881 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:28:04,918 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:28:07,738 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:28:07,738 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:28:07,948 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:28:53,729 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:28:53,729 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:28:54,785 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:28:54,785 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:28:54,941 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:28:54,961 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:28:57,791 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:28:57,792 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:28:57,981 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:29:20,186 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:29:20,187 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:29:21,069 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:29:21,069 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:29:21,209 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:29:21,215 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:29:23,890 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:29:23,890 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:29:24,076 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:30:43,371 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:30:43,372 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:30:44,312 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:30:44,312 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:30:44,459 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:30:44,482 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:30:47,092 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:30:47,093 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:30:47,278 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:45:47,044 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:45:47,045 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:45:47,916 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:45:47,917 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:45:48,052 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:45:48,068 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:45:51,103 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:45:51,104 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:45:51,304 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:49:06,874 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:49:06,875 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:49:07,909 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:49:07,909 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:49:08,080 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:49:08,107 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:49:10,911 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:49:10,912 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:49:11,120 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:50:22,952 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:50:22,953 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:50:23,860 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:50:23,860 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:50:23,992 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:50:24,002 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:50:26,861 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:50:26,862 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:50:27,062 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:52:52,808 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:52:52,809 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:52:53,936 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:52:53,937 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:52:54,122 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:52:54,141 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:52:56,877 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:52:56,877 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:52:57,120 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:54:02,938 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:54:02,938 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:54:04,085 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:54:04,085 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:54:04,240 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:54:04,258 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:54:07,049 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:54:07,050 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:54:07,236 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:59:44,421 [INFO] databases.crmsdb: Database connected
+2020-04-02 23:59:44,422 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-02 23:59:45,408 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-02 23:59:45,409 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:59:45,576 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-02 23:59:45,597 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-02 23:59:48,346 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-02 23:59:48,347 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-02 23:59:48,516 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:01:39,140 [INFO] databases.crmsdb: Database connected
+2020-04-03 00:01:39,140 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-03 00:01:40,202 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-03 00:01:40,202 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:01:40,359 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:01:40,378 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-03 00:01:43,199 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-03 00:01:43,200 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:01:43,571 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:03:15,462 [INFO] databases.crmsdb: Database connected
+2020-04-03 00:03:15,462 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-03 00:03:16,573 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-03 00:03:16,574 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:03:16,738 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:03:16,756 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-03 00:03:19,613 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-03 00:03:19,614 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:03:19,827 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:06:26,514 [INFO] databases.crmsdb: Database connected
+2020-04-03 00:06:26,514 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-03 00:06:27,523 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-03 00:06:27,524 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:06:27,698 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:06:27,737 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-03 00:06:30,881 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-03 00:06:30,882 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:06:31,070 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:08:40,722 [INFO] databases.crmsdb: Database connected
+2020-04-03 00:08:40,723 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSDN
+2020-04-03 00:08:41,797 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSDN
+2020-04-03 00:08:41,797 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:08:41,995 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINDOANHNGHIEP
+2020-04-03 00:08:42,025 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin các bảng params HSVP
+2020-04-03 00:08:45,308 [INFO] databases.crmsdb: kết thúc - lấy thông tin các bảng params HSVP
+2020-04-03 00:08:45,309 [INFO] databases.crmsdb: Bắt đầu - lấy thông tin QLT_THONGTINVIPHAM
+2020-04-03 00:08:45,497 [INFO] databases.crmsdb: kết thúc - lấy thông tin QLT_THONGTINVIPHAM

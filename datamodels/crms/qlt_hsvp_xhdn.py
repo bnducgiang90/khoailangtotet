@@ -1,4 +1,7 @@
 import sys
+
+from pyparsing import unicode
+
 sys.path.append('.') # đoạn này để gọi import root folder của project vào module này : để gọi được đến các folder khác
 import logging
 # define top level module logger
@@ -48,10 +51,16 @@ class qlt_hsvp_xhdn:
 
         return kl
 
-    @property
+    ## Hàm này hiện đang dài quá, sẽ viết ngắn gọn lại sau:
+    #@property
     def qlt_hsvp_nhoms(self):
         _qlt_hsvp_nhoms: List[qlt_hsvp_nhom] = []
-        params_plvp: {} = {(item.NK_XK, item.LOAIVIPHAM):item for item in self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVP] }
+
+        ## (str(item.NK_XK), item.LOAIVIPHAM) : phải convert sang string thì dictionary mới sử dụng tuple là key đc:
+        ## tuple là key của dict thì các item của tuple phải cùng kiểu
+        ## tạm thời không dùng vì python không cho phép unicode làm key ( LOAIVIPHAM có unicode : 127d15k4đ ...
+        #params_plvp = {(str(item.NK_XK), item.LOAIVIPHAM ): item for item in  self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVP]}
+
         params_plclt: List[QLT_PARAMS_HSVP_PLCLT] = self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLCLT]
         params_plhsvp: List[QLT_PARAMS_HSVP_PLHSVP] = self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLHSVP]
         params_hspltn: List[QLT_PARAMS_HSVP_HSPLTN] = self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_HSPLTN]
@@ -63,16 +72,24 @@ class qlt_hsvp_xhdn:
         for item in _lst_tieuchi_hsvps_coTK:
             kl = qlt_hsvp_nhom()
             kl.NK_XK = item.NK_XK
+            print("NK_XK:{} LOAIVIPHAM: {}".format(item.NK_XK, item.LOAIVIPHAM))
+            tmp = None
+            _lst_tmp = [i for i in self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVP] if i.NK_XK == item.NK_XK and  i.LOAIVIPHAM == item.LOAIVIPHAM ]
+            if len(_lst_tmp) >0:
+                tmp = _lst_tmp[0]
 
-            if params_plvp[(item.NK_XK, item.LOAIVIPHAM)].ISAPDUNGCHENHLECHTHUE == True:
-                #tính ID_NHOM: theo bảng QLT_PARAMS_HSVP_PLCLT
-                for p in params_plclt:
-                    if item.TONG_CHENHLECHTHUE <= p.GIATRI:
-                        kl.ID_NHOM = p.ID_NHOM
-                        break;
+            if tmp:
+                if tmp.ISAPDUNGCHENHLECHTHUE == const_crms.ISAPDUNGCHENHLECHTHUE:
+                    # tính ID_NHOM: theo bảng QLT_PARAMS_HSVP_PLCLT
+                    for p in params_plclt:
+                        if item.TONG_CHENHLECHTHUE <= p.GIATRI:
+                            kl.ID_NHOM = p.ID_NHOM
+                            break;
+                else:
+                    # tính ID_NHOM: theo bảng QLT_PARAMS_HSVP_PLVP
+                    kl.ID_NHOM = tmp.ID_NHOM
             else:
-                # tính ID_NHOM: theo bảng QLT_PARAMS_HSVP_PLVP
-                kl.ID_NHOM = params_plvp[(item.NK_XK, item.LOAIVIPHAM)].ID_NHOM
+                kl.ID_NHOM = const_crms.ID_NHOM_DEFAULT
 
             # tính HSPLVP:
             for p in params_plhsvp:
@@ -83,11 +100,29 @@ class qlt_hsvp_xhdn:
             for p in params_hspltn:
                 if item.TRACHNHIEM <= p.ID_TRACHNHIEM:
                     kl.HSPLTN = p.HESO
-                    break;
+                    break
 
+            kl.SOLUONG_NHOM = kl.HSPLTN * kl.HSPLVP
             _tmp_qlt_hsvp_nhoms.append(kl)
 
-        _qlt_tieuchi_hsvps = _tmp_qlt_hsvp_nhoms
+        ##group nhóm:
+        ## OUTPUT : [ [(ID_NHOM,NK_XK),DIEM)]]
+        list_tmp = [[(x.ID_NHOM, x.NK_XK), x.SOLUONG_NHOM] for x in _tmp_qlt_hsvp_nhoms]
+
+        ## OUTPUT : [ [(ID_NHOM,NK_XK),DIEM_MAX - đã group]]
+        list_tmp2 = []
+        for i, g in groupby(sorted(list_tmp), key=lambda x: x[0]):
+            list_tmp2.append([i, sum(v[1] for v in g)])
+
+
+        for item in list_tmp2:
+            kl = qlt_hsvp_nhom()
+            kl.ID_NHOM = item[0][0]
+            kl.NK_XK = item[0][1]
+            kl.SOLUONG_NHOM = item[1]
+            _qlt_hsvp_nhoms.append(kl)
+
+        #_qlt_hsvp_nhoms = _tmp_qlt_hsvp_nhoms
 
         return _qlt_hsvp_nhoms;
 
@@ -163,14 +198,15 @@ class qlt_hsvp_nhom:
         self.NK_XK = None
         self.HSPLVP = 0.0
         self.HSPLTN = 0.0
+        self.SOLUONG_NHOM = 0.0
 
 
-
-    @property
-    def SOLUONG_NHOM(self):
-        if self.HSPLVP == 0 : self.HSPLVP = 1
-        if self.HSPLTN == 0 : self.HSPLTN = 1
-        return self.HSPLVP * self.HSPLVP
+    #
+    # @property
+    # def SOLUONG_NHOM(self):
+    #     if self.HSPLVP == 0 : self.HSPLVP = 1
+    #     if self.HSPLTN == 0 : self.HSPLTN = 1
+    #     return self.HSPLVP * self.HSPLVP
 
 class qlt_hsvp_phanloai_nhom:
     def __init__(self):
