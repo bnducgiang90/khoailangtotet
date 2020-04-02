@@ -28,7 +28,6 @@ def main():
     # for key, value in hsdn_params.items():
     #     print("key : {}, values : {}".format(key, len(value)))
 
-    hsvp_params: {} = srvcrms.get_hsvp_params()
     # print("HSVP:")
     # for key, value in hsvp_params.items():
     #     print("key : {}, values : {}".format(key, len(value)))
@@ -55,7 +54,8 @@ def main():
     # print(my_list3)
 
     print("get_qlt_hsdn_xhdns:")
-    qlt_hsdn_xhdns: List[qlt_hsdn_xhdn] = procs_hsdn_rank.get_qlt_hsdn_xhdns
+    qlt_hsdn_xhdns: List[qlt_hsdn_xhdn] = procs_hsdn_rank.process_qlt_hsdn_xhdn()
+
     for item in qlt_hsdn_xhdns :
         print("MA_DN : {}".format(item.MA_DN))
         print("----- Bang diem tieu chi -----")
@@ -92,7 +92,21 @@ def main():
         print("NK_XK: 1    Diem Phat (DN): {}	 MaDN: {}".format(item.DIEM_PHAT_NK, item.MA_DN))
         print("NK_XK: 2    Diem Phat (DN): {}	 MaDN: {}".format(item.DIEM_PHAT_XK, item.MA_DN))
 
-    print("succeed")
+    print("succeed HSDN")
+
+    print("doing HSVP:")
+    hsvp_params: {} = srvcrms.get_hsvp_params()
+    lstHSVPs = srvcrms.get_hsvps()
+    procs_hsvp_rank = process_rank_hsvp(lstHSVPs, hsvp_params)
+    _qlt_hsvp_xhdns: List[qlt_hsvp_xhdn] = procs_hsvp_rank.process_qlt_hsvp_xhdn()
+    for kl in _qlt_hsvp_xhdns:
+        print("MA_DN: {} số lượng {} điểm: {}".format(kl.MA_DN, kl.qlt_hsvp_tokhais.SOLUONG_KHONGTK, kl.qlt_hsvp_tokhais.DIEM_KHONGTK))
+
+    # lst_qlt_tieuchi_hsvps = procs_hsvp_rank.qlt_tieuchi_hsvps
+    #
+    # print("lst_qlt_tieuchi_hsvps {}".format(len(lst_qlt_tieuchi_hsvps)))
+    # for item in lst_qlt_tieuchi_hsvps:
+    #     print("MA_DN: {}: Tieu chí VP: {}".format(item.MA_DN,len(item.QLT_THONGTINVIPHAMs)))
 
 if __name__ == '__main__':
     print((1, 1) == (1, 1))

@@ -261,7 +261,7 @@ class crmsdb:
             hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVPKTK] = lstPARAMS
             # END QLT_PARAMS_HSVP_PLVPKTK
 
-            # 8. QLT_HSVP_SOTOKHAIDUOCTHONGQUAN
+            # 9. QLT_HSVP_SOTOKHAIDUOCTHONGQUAN
             result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GET_QLT_SOTK_THONGQUAN")
             cols = result["col"]
             datas = result["data"]
@@ -274,6 +274,20 @@ class crmsdb:
 
             hsvp_params[const_hsvp_params.QLT_HSVP_SOTOKHAIDUOCTHONGQUAN] = lstPARAMS
             # END QLT_HSVP_SOTOKHAIDUOCTHONGQUAN
+
+            # 10. QLT_HSVP_VIPHAMTOKHAI
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GET_VIPHAMTOKHAI")
+            cols = result["col"]
+            datas = result["data"]
+            lstPARAMS = []  # khởi tạo một list QLT_HSVP_VIPHAMTOKHAI
+            objParam = None
+            for row in datas:
+                objParam = QLT_HSVP_VIPHAMTOKHAI()
+                helper.toObject(cols, row, objParam)
+                lstPARAMS.append(objParam)
+
+            hsvp_params[const_hsvp_params.QLT_HSVP_VIPHAMTOKHAI] = lstPARAMS
+            # END QLT_HSVP_VIPHAMTOKHAI
 
             return hsvp_params
         except Exception as ex:

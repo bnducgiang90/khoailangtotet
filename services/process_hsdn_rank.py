@@ -11,21 +11,21 @@ from datamodels.crms.qlt_hsdn_xhdn import  *
 from datamodels.crms.qlt_params import *
 
 class process_rank_hsdn:
-    def __init__(self, lstHSDNs : [], params_hsdn : {}):
-        self.srvcrms = crmsservice()
-        self.hsdn_params = params_hsdn
-        self.HSDNs = lstHSDNs
+    def __init__(self, _lstHSDNs : [], _params_hsdn : {}):
+        #self._srvcrms = crmsservice()
+        self._hsdn_params = _params_hsdn
+        self._HSDNs = _lstHSDNs
         #self.qlt_hsdn_xhdns : List[qlt_hsdn_xhdn] = []
 
     # thực hiện tính điểm, điểm phạt, điểm max của danh sách doanh nghiệp theo tiêu chí
-    @property
-    def get_qlt_hsdn_xhdns(self):
+
+    def process_qlt_hsdn_xhdn(self):
         _qlt_hsdn_xhdns: List[qlt_hsdn_xhdn] = []
 
-        for qlt_ttdn in self.HSDNs:
+        for qlt_ttdn in self._HSDNs:
             lstKLs = []
 
-            for param in self.hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_TC_MOTA]:
+            for param in self._hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_TC_MOTA]:
                 kl = qlt_tieuchi_hsdn()
                 kl.MA_DN = qlt_ttdn.MA_DN
                 kl.ID_TIEUCHI = param.ID_TIEUCHI
@@ -43,39 +43,39 @@ class process_rank_hsdn:
                 self.set_diem_tieuchi_hsdn(kl)
                 lstKLs.append(kl)
 
-            objqlt_hsdn_xhdn = qlt_hsdn_xhdn(qlt_ttdn.MA_DN, lstKLs,  self.hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PLDCC])
+            objqlt_hsdn_xhdn = qlt_hsdn_xhdn(qlt_ttdn.MA_DN, lstKLs,  self._hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PLDCC])
             _qlt_hsdn_xhdns.append(objqlt_hsdn_xhdn)
 
         return _qlt_hsdn_xhdns
 
     # thực hiện tính điểm, điểm phạt, điểm max của từng tiêu chí
-    def set_diem_tieuchi_hsdn(self, objqlt_tieuchi_hsdn: qlt_tieuchi_hsdn):
+    def set_diem_tieuchi_hsdn(self, kl: qlt_tieuchi_hsdn):
         try:
-            params_hsdn_dgtc: List[QLT_PARAMS_HSDN_DGTC] = [item for item in
-                                                            self.hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_DGTC]
-                                                            if item.ID_TIEUCHI == objqlt_tieuchi_hsdn.ID_TIEUCHI
-                                                            ]
+            _params_hsdn_dgtc: List[QLT_PARAMS_HSDN_DGTC] = [item for item in
+                                                            self._hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_DGTC]
+                                                            if item.ID_TIEUCHI == kl.ID_TIEUCHI
+                                                           ]
             ## sắp xếp lại theo giá trị của tiêu chí:
-            params_hsdn_dgtc.sort(key = lambda item: item.GIATRI, reverse=False)
+            _params_hsdn_dgtc.sort(key = lambda item: item.GIATRI, reverse=False)
 
-            if objqlt_tieuchi_hsdn.PHUONGTHUCAPDUNG == const_crms.PTAD_MA:
-                if objqlt_tieuchi_hsdn.GIA_TRI == params_hsdn_dgtc[0].GIATRI:
-                    objqlt_tieuchi_hsdn.DIEM = params_hsdn_dgtc[0].DIEMSO
-                    objqlt_tieuchi_hsdn.DIEMPHAT = params_hsdn_dgtc[0].DIEMPHAT
+            if kl.PHUONGTHUCAPDUNG == const_crms.PTAD_MA:
+                if kl.GIA_TRI == _params_hsdn_dgtc[0].GIATRI:
+                    kl.DIEM = _params_hsdn_dgtc[0].DIEMSO
+                    kl.DIEMPHAT = _params_hsdn_dgtc[0].DIEMPHAT
             else:
-                for item in params_hsdn_dgtc:
-                    if objqlt_tieuchi_hsdn.GIA_TRI <= item.GIATRI:
-                        objqlt_tieuchi_hsdn.DIEM = item.DIEMSO
-                        objqlt_tieuchi_hsdn.DIEMPHAT = item.DIEMPHAT
+                for item in _params_hsdn_dgtc:
+                    if kl.GIA_TRI <= item.GIATRI:
+                        kl.DIEM = item.DIEMSO
+                        kl.DIEMPHAT = item.DIEMPHAT
                         break
-            if objqlt_tieuchi_hsdn.DIEM is None or objqlt_tieuchi_hsdn.DIEMPHAT is None:
+            if kl.DIEM is None or kl.DIEMPHAT is None:
                 logger.warning("ID_TIEUCHI : {} có giá trị {} không phù hợp với bảng tham số có giá trị MAX là {} "
-                               .format(objqlt_tieuchi_hsdn.ID_TIEUCHI, objqlt_tieuchi_hsdn.GIA_TRI,
-                                       params_hsdn_dgtc[-1].GIATRI)
+                               .format(kl.ID_TIEUCHI, kl.GIA_TRI,
+                                       _params_hsdn_dgtc[-1].GIATRI)
                                )
             else :
-                objqlt_tieuchi_hsdn.DIEM_MAX = max(item.DIEMSO for item in params_hsdn_dgtc)
+                kl.DIEM_MAX = max(item.DIEMSO for item in _params_hsdn_dgtc)
 
         except Exception as ex:
-            logger.exception("Lỗi Giá trị {} ID_TIEUCHI : {}".format( objqlt_tieuchi_hsdn.GIA_TRI, objqlt_tieuchi_hsdn.ID_TIEUCHI))
+            logger.exception("Lỗi Giá trị {} ID_TIEUCHI : {}".format( kl.GIA_TRI, kl.ID_TIEUCHI))
 

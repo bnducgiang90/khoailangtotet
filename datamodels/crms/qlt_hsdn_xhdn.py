@@ -4,10 +4,9 @@ import logging
 # define top level module logger
 logger = logging.getLogger(__name__)
 from typing import List, Dict
-from itertools import groupby
+#from itertools import groupby
 from collections import Counter
 from utils.constants import *
-from datamodels.crms.qlt_hsdn_xhdn import  *
 from datamodels.crms.qlt_params import *
 
 class qlt_hsdn_xhdn:
@@ -23,6 +22,7 @@ class qlt_hsdn_xhdn:
         # self.qlt_tieuchi_max_nhoms: List[qlt_tieuchi_nhom] = []
         # self.qlt_tytrong_phanloai_nhoms: List[qlt_tytrong_phanloai_nhom] = []
         # self.qlt_diem_phanloaicuoicung_nhoms: List[qlt_diem_phanloaicuoicung_nhom] = []
+
     @property
     def DIEM_PLCC_NK(self):
         return self._DIEM_PLCC_NK
@@ -43,7 +43,7 @@ class qlt_hsdn_xhdn:
 
     @property
     def qlt_tieuchi_nhoms(self):
-        list_tmp = []
+        # list_tmp = []
         _qlt_tieuchi_nhoms: List[qlt_tieuchi_nhom] = []
 
         ## OUTPUT : [ [(ID_NHOM,NK_XK),DIEM)]]
