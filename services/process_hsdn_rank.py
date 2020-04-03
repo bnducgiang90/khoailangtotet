@@ -77,5 +77,5 @@ class process_rank_hsdn:
                 kl.DIEM_MAX = max(item.DIEMSO for item in _params_hsdn_dgtc)
 
         except Exception as ex:
-            logger.exception("Lỗi Giá trị {} ID_TIEUCHI : {}".format( kl.GIA_TRI, kl.ID_TIEUCHI))
+            logger.exception("MA_DN : {} Lỗi Giá trị {} ID_TIEUCHI : {}".format(kl.MA_DN, kl.GIA_TRI, kl.ID_TIEUCHI))
 

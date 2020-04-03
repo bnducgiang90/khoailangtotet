@@ -12,6 +12,11 @@ class crmsservice:
     def __init__(self):
         self.db = crmsdb()
 
+## QLT_PARAMS_PLXEPHANG:
+    def get_params_plxephangs(self):
+        _plxephangs = self.db.get_params_plxephangs()
+        return _plxephangs
+
 ##get thông tin doanh nghiệp
     def get_hsdns(self,FromRowID: int, ToRowID: int, IsTinhLai: int) -> []:
         lstHSDNs = self.db.get_hsdns(FromRowID, ToRowID, IsTinhLai)

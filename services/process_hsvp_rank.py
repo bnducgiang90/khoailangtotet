@@ -20,22 +20,27 @@ class process_rank_hsvp:
     def process_qlt_hsvp_xhdn(self):
         _qlt_hsvp_xhdns: List[qlt_hsvp_xhdn] = []
 
-        for item in  self.qlt_tieuchi_hsvps:
-            kl = qlt_hsvp_xhdn(item.MA_DN, item.QLT_THONGTINVIPHAMs, self._hsvp_params)
+        for item in  self.qlt_tieuchi_hsvps():
+            kl = qlt_hsvp_xhdn(item.MA_DN, item, self._hsvp_params)
             _qlt_hsvp_xhdns.append(kl)
 
         return _qlt_hsvp_xhdns
 
-    @property
+    #@property
     def qlt_tieuchi_hsvps(self):
         _qlt_tieuchi_hsvps: List[qlt_tieuchi_hsvp] = []
         lst_distinct = list(set([item.MA_DN for item in self._HSVPs]))
-
+        _dict_sotk_tq = {item.MA_DN: item.SOTOKHAIDUOCTHONGQUAN for item in self._hsvp_params[const_hsvp_params.QLT_HSVP_SOTOKHAIDUOCTHONGQUAN] }
         for ma_dn in lst_distinct:
             kl = qlt_tieuchi_hsvp()
             kl.MA_DN = ma_dn
             kl.QLT_THONGTINVIPHAMs = [item for item in self._HSVPs if item.MA_DN == ma_dn]
+            tmp = _dict_sotk_tq.get(kl.MA_DN)
+            if tmp:
+                kl.SOTOKHAIDUOCTHONGQUAN = tmp
+
             _qlt_tieuchi_hsvps.append(kl)
+
 
         return _qlt_tieuchi_hsvps
 

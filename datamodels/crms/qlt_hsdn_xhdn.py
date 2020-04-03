@@ -14,32 +14,22 @@ class qlt_hsdn_xhdn:
         self.MA_DN = _MA_DN
         self.qlt_tieuchi_hsdns: List[qlt_tieuchi_hsdn] = _qlt_tieuchi_hsdns
         self.lst_params_pldcc: List[QLT_PARAMS_HSDN_PLDCC] = _lst_params_pldcc
-        self._DIEM_PLCC_NK = 0
-        self._DIEM_PLCC_XK = 0
-        self._DIEM_PHAT_NK = 0
-        self._DIEM_PHAT_XK = 0
         # self.qlt_tieuchi_nhoms: List[qlt_tieuchi_nhom] = []
         # self.qlt_tieuchi_max_nhoms: List[qlt_tieuchi_nhom] = []
         # self.qlt_tytrong_phanloai_nhoms: List[qlt_tytrong_phanloai_nhom] = []
         # self.qlt_diem_phanloaicuoicung_nhoms: List[qlt_diem_phanloaicuoicung_nhom] = []
 
     @property
-    def DIEM_PLCC_NK(self):
-        return self._DIEM_PLCC_NK
+    def DIEM_PLCC(self):
+        _kl = qlt_hsdn_diemplcc()
+        _dlpcc_nhoms = self.qlt_diem_phanloaicuoicung_nhoms
+        _kl.DIEM_PLCC_NK = sum([item.DIEM_PLCC for item in _dlpcc_nhoms if item.NK_XK == const_crms.LOAI_HINH_NK])
+        _kl.DIEM_PLCC_XK = sum([item.DIEM_PLCC for item in _dlpcc_nhoms if item.NK_XK == const_crms.LOAI_HINH_XK])
+        _kl.DIEM_PHAT_NK = sum([item.DIEMPHAT for item in self.qlt_tieuchi_hsdns  if item.NK_XK == const_crms.LOAI_HINH_NK and item.DIEMPHAT is not None ])
+        _kl.DIEM_PHAT_XK = sum([item.DIEMPHAT for item in self.qlt_tieuchi_hsdns if item.NK_XK == const_crms.LOAI_HINH_XK and item.DIEMPHAT is not None])
 
-    @property
-    def DIEM_PLCC_XK(self):
-        return self._DIEM_PLCC_XK
+        return _kl
 
-    @property
-    def DIEM_PHAT_NK(self):
-        self._DIEM_PHAT_NK = sum([item.DIEMPHAT for item in self.qlt_tieuchi_hsdns  if item.NK_XK == const_crms.LOAI_HINH_NK and item.DIEMPHAT is not None ])
-        return self._DIEM_PHAT_NK
-
-    @property
-    def DIEM_PHAT_XK(self):
-        self._DIEM_PHAT_XK = sum([item.DIEMPHAT for item in self.qlt_tieuchi_hsdns if item.NK_XK == const_crms.LOAI_HINH_XK and item.DIEMPHAT is not None])
-        return self._DIEM_PHAT_XK
 
     @property
     def qlt_tieuchi_nhoms(self):
@@ -134,9 +124,9 @@ class qlt_hsdn_xhdn:
             for item in params_hsdn_dplcc:
                 if ttpl.TYTRONG <= item.GIATRI:
                     kl.DIEM_PLCC = item.DIEM
-                    if kl.NK_XK == const_crms.LOAI_HINH_NK: self._DIEM_PLCC_NK += item.DIEM
-                    else : self._DIEM_PLCC_XK += item.DIEM
-                    break;
+                    # if kl.NK_XK == const_crms.LOAI_HINH_NK: self._DIEM_PLCC_NK += item.DIEM
+                    # else : self._DIEM_PLCC_XK += item.DIEM
+                    break
 
             if kl.DIEM_PLCC is None :
                 logger.warning("NK_XK : {} ; ID_NHOM :{} có giá trị {} không phù hợp với bảng tham số QLT_PARAMS_HSDN_PLDCC có giá trị MAX là {} "
@@ -179,3 +169,10 @@ class qlt_diem_phanloaicuoicung_nhom:
         self.ID_NHOM = None
         self.NK_XK = None
         self.DIEM_PLCC = 0.0
+
+class qlt_hsdn_diemplcc:
+    def __init__(self):
+        self.DIEM_PLCC_NK = 0.0
+        self.DIEM_PLCC_XK = 0.0
+        self.DIEM_PHAT_NK = 0.0
+        self.DIEM_PHAT_XK = 0.0
