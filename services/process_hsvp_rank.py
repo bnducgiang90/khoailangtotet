@@ -20,12 +20,14 @@ class process_rank_hsvp:
     def process_qlt_hsvp_xhdn(self):
         _qlt_hsvp_xhdns: List[qlt_hsvp_xhdn] = []
 
-        for item in  self.qlt_tieuchi_hsvps():
+        _qlt_tieuchi_hsvps =  self.qlt_tieuchi_hsvps()
+        for item in _qlt_tieuchi_hsvps:
             kl = qlt_hsvp_xhdn(item.MA_DN, item, self._hsvp_params)
             _qlt_hsvp_xhdns.append(kl)
 
         return _qlt_hsvp_xhdns
 
+    ## sẽ tối ưu chỗ này : dùng for hơi chậm
     #@property
     def qlt_tieuchi_hsvps(self):
         _qlt_tieuchi_hsvps: List[qlt_tieuchi_hsvp] = []

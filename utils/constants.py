@@ -8,6 +8,7 @@ class const_crms:
     CO_TK = 1
     ID_NHOM_DEFAULT = "C"
     ISAPDUNGCHENHLECHTHUE = 1
+    BATCH_SIZE = 50000
 
 ## HSDN params
 class const_hsdn_params:

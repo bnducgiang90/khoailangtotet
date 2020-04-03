@@ -16,9 +16,11 @@ def main():
     logging_config = filehelper.readyalmfile(logconfig.logconfigfile)
     logging.config.dictConfig(logging_config)
     ## end khởi tạo logging
-
+    print("start")
     _process_rank = process_rank()
     _process_rank.qlt_xhdn()
+
+    print("done!")
 
     # srvcrms = crmsservice()
     # hsdn_params: {} = srvcrms.get_hsdn_params()

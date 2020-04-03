@@ -45,7 +45,7 @@ class oracledb:
 ## excecute using sqlquery binding:
     def execquery(self,sql,**params):
         self.__connect__()
-        self.cur.execute(sql,params)
+        self.cur.execute(sql,keywordParameters=params)
         cols = fields(self.cur)
         data=self.cur.fetchall() # đoạn này có thể thay bằng fetchmany(batch_size)
         self.__disconnect__()
@@ -54,7 +54,7 @@ class oracledb:
 
     def execquerybatch(self,sql, batch_size, **params):
         self.__connect__()
-        self.cur.execute(sql,params)
+        self.cur.execute(sql,keywordParameters=params)
         cols = fields(self.cur)
         data=self.cur.fetchmany(batch_size) # đoạn này có thể thay bằng fetchmany(batch_size)
         self.__disconnect__()
@@ -63,14 +63,14 @@ class oracledb:
 
     def execnonquery(self, sql,**params):
         self.__connect__()
-        self.cur.execute(sql,params)
+        self.cur.execute(sql,keywordParameters=params)
         self.__disconnect__()
 
     def exectrans(self, sql,**params):
         try:
             self.__connect__()
             self.conn.begin()
-            self.cur.execute(sql,params)
+            self.cur.execute(sql,keywordParameters=params)
             self.conn.commit()
         except cx_Oracle.Error as ex:
             self.conn.rollback()
@@ -130,14 +130,14 @@ class oracledb:
 
     def execprocnoquery(self,procname,**params):
         self.__connect__()
-        self.cur.callproc(procname,params)
+        self.cur.callproc(procname,keywordParameters=params)
         self.__disconnect__()
 
     def execprocnoquerytrans(self,procname,**params):
         try:
             self.__connect__()
             self.conn.begin()
-            self.cur.callproc(procname,params)
+            self.cur.callproc(procname,keywordParameters=params)
             self.conn.commit()
         except cx_Oracle.Error as ex:
             self.conn.rollback()

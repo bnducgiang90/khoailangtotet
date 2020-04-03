@@ -15,6 +15,85 @@ class crmsdb:
         self.db = oracledb()
         logger.info("Database connected")
 
+#Get ID_PHIENBAN, ID_LYDOXEPHANG:
+    def get_next_id_phienban(self):
+        _id_phienban = 0
+        try:
+
+            logger.info("Bắt đầu - lấy thông tin SP_PhienBan_GetNextID")
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_PhienBan_GetNextID")
+            _id_phienban = result["data"][0][0]
+
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("Kết thúc - lấy thông tin SP_PhienBan_GetNextID")
+
+        return _id_phienban
+
+    def get_next_id_lydoxephang(self):
+        _id_lydo = 0
+        try:
+            logger.info("Bắt đầu - lấy thông tin SP_LyDoXH_GetID")
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_LyDoXH_GetID")
+            _id_lydo = result["data"][0][0]
+
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("Kết thúc - lấy thông tin SP_LyDoXH_GetID")
+
+        return _id_lydo
+
+
+
+    def get_XHDN_TH_GetID(self):
+        _id = 0
+        try:
+            logger.info("Bắt đầu - lấy thông tin SP_XHDN_TH_GetID")
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_XHDN_TH_GetID")
+            _id = result["data"][0][0]
+
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("Kết thúc - lấy thông tin SP_XHDN_TH_GetID")
+
+        return _id
+
+# Insert thông tin QLT_TMP_XEPHANGDN_20 (:ID_PHIENBAN,:MADN,:DIEMPHANLOAINK,:DIEMPHANLOAIXK,:HANGNK,:HANGXK, :ID_LYDOXEPHANG)
+    def insert_qlt_tmp_xephangdn(self, datas):
+        try:
+            logger.info("Bắt đầu - Insert thông tin QLT_TMP_XEPHANGDN_20 BATCH_SIZE: {}".format(const_crms.BATCH_SIZE))
+            _sqltext = "insert into QLT_TMP_XEPHANGDN_20 values(:1,:2,:3,:4,:5,:6,:7)"
+            self.db.execnonquerybatch(_sqltext, datas, const_crms.BATCH_SIZE)
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("kết thúc - Insert thông tin QLT_XEPHANGDN_20")
+
+    def insert_qlt_xephangdn(self, _ID_PHIENBAN, _ID_LYDOXEPHANG):
+        try:
+            logger.info("Bắt đầu - Insert thông tin QLT_XEPHANGDN_20 ")
+            self.db.execprocnoquerytrans("CRMS.PKG_XHDN_V2.QLT_XepHangDN_Insert", p_id_phienban =_ID_PHIENBAN , p_id_lydoxephang =_ID_LYDOXEPHANG)
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("kết thúc - Insert thông tin QLT_XEPHANGDN_20")
+
+# Insert lý do xếp hạng điểm hsdn:
+# Insert thông tin QLT_LYDOXEPHANG_HSDN_DIEMTC_20 (:ID_PHIENBAN,:MADN,:NK_XK,:ID_TIEUCHI,:DIEM,:DIEMPHAT)
+    def insert_hsdn_lydoxephang_diemtc(self, datas):
+        try:
+            logger.info("Bắt đầu - Insert thông tin QLT_LYDOXEPHANG_HSDN_DIEMTC_20 BATCH_SIZE: {}".format(const_crms.BATCH_SIZE))
+            _sqltext = "insert into QLT_LYDOXEPHANG_HSDN_DIEMTC_20 values(:1,:2,:3,:4,:5,:6)"
+            self.db.execnonquerybatch(_sqltext, datas, const_crms.BATCH_SIZE)
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("kết thúc - Insert thông tin QLT_LYDOXEPHANG_HSDN_DIEMTC_20")
+
+
 #get thông tin params SP_GET_QLT_PARAMS_PLXEPHANG
     def get_params_plxephangs(self):
         try:
@@ -294,6 +373,7 @@ class crmsdb:
             logger.exception("Lỗi :")
         finally:
             logger.info("kết thúc - lấy thông tin các bảng params HSVP")
+
 
 
 ## test get data
