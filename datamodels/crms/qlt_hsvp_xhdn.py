@@ -54,8 +54,16 @@ class qlt_hsvp_xhdn:
         ##params_plvp = {(str(item.NK_XK), item.LOAIVIPHAM ): item for item in  self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLVP]}
 
         params_plclt: List[QLT_PARAMS_HSVP_PLCLT] = self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLCLT]
+        ## sắp xếp lại theo giá trị của bảng params_plclt:
+        params_plclt.sort(key=lambda k: k.GIATRI, reverse=False)
+
         params_plhsvp: List[QLT_PARAMS_HSVP_PLHSVP] = self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_PLHSVP]
+        ## sắp xếp lại theo giá trị của bảng params_plclt:
+        params_plhsvp.sort(key=lambda k: k.ID_PHANLOAIVIPHAM, reverse=False)
+
         params_hspltn: List[QLT_PARAMS_HSVP_HSPLTN] = self._hsvp_params[const_hsvp_params.QLT_PARAMS_HSVP_HSPLTN]
+        ## sắp xếp lại theo giá trị của bảng params_hspltn:
+        params_hspltn.sort(key=lambda k: k.ID_TRACHNHIEM, reverse=False)
 
         ## lấy những vp có tờ khai, vi phạm ko có tờ khai tính ở qlt_hsvp_tokhais (NK_XK=3)
         _lst_tieuchi_hsvps_coTK: List[QLT_THONGTINVIPHAM] = [item for item in self._qlt_tieuchi_hsvps.QLT_THONGTINVIPHAMs if item.COTK == const_crms.CO_TK]

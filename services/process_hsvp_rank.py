@@ -3,13 +3,13 @@ sys.path.append('.') # đoạn này để gọi import root folder của project
 import logging
 # define top level module logger
 logger = logging.getLogger(__name__)
-from typing import List
 
-from services.crmsservices import *
-from utils.constants import *
 from datamodels.crms.qlt_hsvp_xhdn import  *
 from datamodels.crms.qlt_params import *
 from datamodels.crms.qlt_thongtins import QLT_THONGTINVIPHAM
+from typing import List
+from services.crmsservices import *
+from utils.constants import *
 
 class process_rank_hsvp:
     def __init__(self, _lstHSVPs: [], _params_hsvp: {}):
@@ -31,18 +31,34 @@ class process_rank_hsvp:
     #@property
     def qlt_tieuchi_hsvps(self):
         _qlt_tieuchi_hsvps: List[qlt_tieuchi_hsvp] = []
-        lst_distinct = list(set([item.MA_DN for item in self._HSVPs]))
+        _lst_distinct = list(set([item.MA_DN for item in self._HSVPs]))
         _dict_sotk_tq = {item.MA_DN: item.SOTOKHAIDUOCTHONGQUAN for item in self._hsvp_params[const_hsvp_params.QLT_HSVP_SOTOKHAIDUOCTHONGQUAN] }
-        for ma_dn in lst_distinct:
-            kl = qlt_tieuchi_hsvp()
-            kl.MA_DN = ma_dn
-            kl.QLT_THONGTINVIPHAMs = [item for item in self._HSVPs if item.MA_DN == ma_dn]
-            tmp = _dict_sotk_tq.get(kl.MA_DN)
-            if tmp:
-                kl.SOTOKHAIDUOCTHONGQUAN = tmp
+        #_dict = {ma_dn: [item for item in  self._HSVPs if item.MA_DN == ma_dn] for ma_dn in _lst_distinct}
+        _qlt_tieuchi_hsvps = [self.fx(ma_dn,_dict_sotk_tq) for ma_dn in _lst_distinct]
 
-            _qlt_tieuchi_hsvps.append(kl)
-
+        # for ma_dn in _lst_distinct:
+        #     kl = qlt_tieuchi_hsvp()
+        #     kl.MA_DN = ma_dn
+        #     kl.QLT_THONGTINVIPHAMs = [item for item in self._HSVPs if item.MA_DN == ma_dn]
+        #     tmp = _dict_sotk_tq.get(kl.MA_DN)
+        #     if tmp:
+        #         kl.SOTOKHAIDUOCTHONGQUAN = tmp
+        #
+        #     _qlt_tieuchi_hsvps.append(kl)
 
         return _qlt_tieuchi_hsvps
+
+    def fx(self, _ma_dn: str,_dict_sotk_tq: {}):
+        kl = qlt_tieuchi_hsvp()
+        kl.MA_DN = _ma_dn
+        kl.QLT_THONGTINVIPHAMs =[item for item in self._HSVPs if item.MA_DN == _ma_dn] # list(self.filterbyma_dn(_ma_dn)) #list(filter(lambda item : item.MA_DN == _ma_dn , self._HSVPs))
+        tmp = _dict_sotk_tq.get(kl.MA_DN)
+        if tmp:
+            kl.SOTOKHAIDUOCTHONGQUAN = tmp
+        return kl
+
+    def filterbyma_dn(self, _ma_dn):
+        for el in self._HSVPs:
+            if el.MA_DN == _ma_dn: yield el
+
 

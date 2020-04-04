@@ -37,8 +37,8 @@ class crmsservice:
                         ]
         self.db.insert_qlt_tmp_xephangdn(_tuple_params)
 
-    def insert_qlt_xephangdn(self, ID_PHIENBAN, ID_LYDOXEPHANG):
-        self.db.insert_qlt_xephangdn(ID_PHIENBAN, ID_LYDOXEPHANG)
+    def insert_qlt_xephangdn(self, _ID_PHIENBAN, _ID_LYDOXEPHANG):
+        self.db.insert_qlt_xephangdn(_ID_PHIENBAN, _ID_LYDOXEPHANG)
 
 # insert_hsdn_lydoxephang_diemtc
     def insert_hsdn_lydoxephang_diemtc(self, datas):

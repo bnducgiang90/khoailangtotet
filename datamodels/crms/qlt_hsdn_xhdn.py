@@ -14,10 +14,6 @@ class qlt_hsdn_xhdn:
         self.MA_DN = _MA_DN
         self.qlt_tieuchi_hsdns: List[qlt_tieuchi_hsdn] = _qlt_tieuchi_hsdns
         self.lst_params_pldcc: List[QLT_PARAMS_HSDN_PLDCC] = _lst_params_pldcc
-        # self.qlt_tieuchi_nhoms: List[qlt_tieuchi_nhom] = []
-        # self.qlt_tieuchi_max_nhoms: List[qlt_tieuchi_nhom] = []
-        # self.qlt_tytrong_phanloai_nhoms: List[qlt_tytrong_phanloai_nhom] = []
-        # self.qlt_diem_phanloaicuoicung_nhoms: List[qlt_diem_phanloaicuoicung_nhom] = []
 
     @property
     def DIEM_PLCC(self):

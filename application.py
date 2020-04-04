@@ -134,12 +134,4 @@ def main():
     # #     print("MA_DN: {}: Tieu chí VP: {}".format(item.MA_DN,len(item.QLT_THONGTINVIPHAMs)))
 
 if __name__ == '__main__':
-    print((1, 1) == (1, 1))
-    print((1, 1) == (1, 2))
-    gianggiang = {"80d26k2đ" : "vô ný", "80d26k2d": "u vô ný"}
-    print(gianggiang)
-    lst =['80d26k2đ','80d26k2d','127d11k1đ']
-    dict = {item: item for item in lst}
-    print (dict)
-    print(min((1.1,2)))
     main()
