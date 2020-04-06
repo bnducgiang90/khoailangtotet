@@ -4,7 +4,7 @@ import logging.config
 from configs.configsettings import logconfig
 from utils.filehelpers import filehelper
 from services.process_rank import process_rank
-
+import datetime
 # from utils.objecthelpers import  helper
 
 def mappingdata(obj: object):
@@ -16,11 +16,11 @@ def main():
     logging_config = filehelper.readyalmfile(logconfig.logconfigfile)
     logging.config.dictConfig(logging_config)
     ## end khởi tạo logging
-    print("start")
+    print("{} start".format(datetime.datetime.now()))
     _process_rank = process_rank()
     _process_rank.qlt_xhdn()
 
-    print("done!")
+    print("{} done!".format(datetime.datetime.now()))
 
     # srvcrms = crmsservice()
     # hsdn_params: {} = srvcrms.get_hsdn_params()
@@ -135,3 +135,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+#
+# from datetime import datetime
+#
+# datetime.today().strftime('%Y-%m-%d')
+# Additionally, for anyone also looking for a zero-padded Hour, Minute, and Second at the end: (Comment by Gabriel Staples)
+#
+# datetime.today().strftime('%Y-%m-%d-%H:%M:%S')

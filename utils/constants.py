@@ -9,6 +9,9 @@ class const_crms:
     ID_NHOM_DEFAULT = "C"
     ISAPDUNGCHENHLECHTHUE = 1
     BATCH_SIZE = 50000
+    NUMBER_RECORD_PROCESS = 5000
+    IS_TINHLAI = 1
+
 
 ## HSDN params
 class const_hsdn_params:
@@ -16,6 +19,7 @@ class const_hsdn_params:
     QLT_PARAMS_HSDN_DGTC = "QLT_PARAMS_HSDN_DGTC"
     QLT_PARAMS_HSDN_PLDCC = "QLT_PARAMS_HSDN_PLDCC"
     QLT_PARAMS_HSDN_PTAD = "QLT_PARAMS_HSDN_PTAD"
+    QLT_MIN_MAX_ID = "QLT_MIN_MAX_ID"
 
 ## HSVP params
 class const_hsvp_params:

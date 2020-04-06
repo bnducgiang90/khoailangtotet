@@ -16,9 +16,11 @@ class crmsservice:
     def __init__(self):
         self.db = crmsdb()
 
-    # Get ID_PHIENBAN, ID_LYDOXEPHANG:
-    def get_next_id_phienban(self):
+# Get ID_PHIENBAN, ID_LYDOXEPHANG:
+    def get_id_phienban(self, istinhlai):
         _id_phienban = self.db.get_next_id_phienban()
+        if istinhlai == const_crms.IS_TINHLAI:
+            _id_phienban = self.db.get_current_id_phienban()
         return _id_phienban
 
     def get_next_id_lydoxephang(self):
@@ -28,6 +30,9 @@ class crmsservice:
     def get_XHDN_TH_GetID(self):
         _id = self.db.get_XHDN_TH_GetID()
         return _id
+
+    def XHDN_TH_Update(self, id):
+        self.db.XHDN_TH_Update(id)
 
 #insert_qlt_xephangdn
     def insert_qlt_tmp_xephangdn(self, datas: []):

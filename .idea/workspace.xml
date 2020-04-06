@@ -4,11 +4,14 @@
     <list default="true" id="9311d57a-7e8a-4629-b514-60d2bba97f7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamodels/crms/qlt_hsdn_xhdn.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/crms/qlt_hsdn_xhdn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databases/crmsdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/databases/crmsdb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datamodels/crms/qlt_hsvp_xhdn.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/crms/qlt_hsvp_xhdn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datamodels/crms/qlt_thongtins.py" beforeDir="false" afterPath="$PROJECT_DIR$/datamodels/crms/qlt_thongtins.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/crmsservices.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/crmsservices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/process_hsdn_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/process_hsdn_rank.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/process_hsvp_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/process_hsvp_rank.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/process_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/process_rank.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +46,9 @@
       <module name="khoailangtotet" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -113,7 +119,10 @@
       <workItem from="1585915074547" duration="12475000" />
       <workItem from="1585927815017" duration="1254000" />
       <workItem from="1585989120279" duration="181000" />
-      <workItem from="1585989338152" duration="5546000" />
+      <workItem from="1585989338152" duration="9372000" />
+      <workItem from="1586054831077" duration="9776000" />
+      <workItem from="1586068486406" duration="8547000" />
+      <workItem from="1586139935702" duration="1317000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1584607235410</created>
@@ -213,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585927862435</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit">
+      <created>1585994984968</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585994984968</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,62 +244,66 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="85" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584330087220" />
-    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1585927857702">
+    <state x="454" y="24" key="CommitChangelistDialog2" timestamp="1585994982429">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585927857702" />
-    <state width="1168" height="459" key="DebuggerActiveHint" timestamp="1585992659777">
+    <state x="454" y="24" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585994982429" />
+    <state width="1168" height="459" key="DebuggerActiveHint" timestamp="1586069685021">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1168" height="459" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1585992659777" />
-    <state width="1557" height="276" key="GridCell.Tab.0.bottom" timestamp="1585992995521">
+    <state width="1168" height="459" key="DebuggerActiveHint/0.0.1600.860@0.0.1600.860" timestamp="1586069685021" />
+    <state width="1557" height="276" key="GridCell.Tab.0.bottom" timestamp="1586084347674">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585992995521" />
-    <state width="1557" height="276" key="GridCell.Tab.0.center" timestamp="1585992995521">
+    <state width="1557" height="276" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586084347674" />
+    <state width="1557" height="276" key="GridCell.Tab.0.center" timestamp="1586084347674">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585992995521" />
-    <state width="1557" height="276" key="GridCell.Tab.0.left" timestamp="1585992995521">
+    <state width="1557" height="276" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586084347674" />
+    <state width="1557" height="276" key="GridCell.Tab.0.left" timestamp="1586084347674">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585992995521" />
-    <state width="1557" height="276" key="GridCell.Tab.0.right" timestamp="1585992995521">
+    <state width="1557" height="276" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586084347674" />
+    <state width="1557" height="276" key="GridCell.Tab.0.right" timestamp="1586084347674">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585992995521" />
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1585992995522">
+    <state width="1557" height="276" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586084347674" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1586084347675">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585992995522" />
-    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1585992995522">
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586084347675" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1586084347674">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1585992995522" />
-    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1585992995521">
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1586084347674" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1586084347674">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1585992995521" />
-    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1585992995522">
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1586084347674" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1586084347675">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1585992995522" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1586084347675" />
     <state x="409" y="83" key="SettingsEditor" timestamp="1585989304285">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="409" y="83" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585989304285" />
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1585927890592">
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1585995003092">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1585927890592" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1585995003092" />
     <state width="808" height="438" key="XDebugger.FullValuePopup" timestamp="1584612395860">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="808" height="438" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1584612395860" />
-    <state x="494" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1585989339036">
+    <state x="494" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1586139939721">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="494" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585989339036" />
+    <state x="494" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1586139939721" />
+    <state x="447" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586066405792">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="447" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1600.860@0.0.1600.860" timestamp="1586066405792" />
     <state x="371" y="166" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1584611433292">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -298,28 +318,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/datamodels/crms/qlt_hsvp_xhdn.py</url>
-          <line>197</line>
+          <line>198</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/datamodels/crms/qlt_hsvp_xhdn.py</url>
-          <line>156</line>
+          <line>157</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/services/process_hsvp_rank.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/databases/crmsdb.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="13" />
+          <line>53</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/services/process_hsvp_rank.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="14" />
+          <line>18</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/databases/crmsdb.py</url>
+          <line>146</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/services/process_rank.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -330,6 +355,6 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/khoailangtotet$application.coverage" NAME="application Coverage Results" MODIFIED="1585992431155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/khoailangtotet$application.coverage" NAME="application Coverage Results" MODIFIED="1586080114670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

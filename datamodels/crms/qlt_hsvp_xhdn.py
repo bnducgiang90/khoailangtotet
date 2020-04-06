@@ -100,12 +100,15 @@ class qlt_hsvp_xhdn:
                     if item.NGHIEMTRONG <= p.ID_PHANLOAIVIPHAM:
                         kl.HSPLVP = p.HESO
                         break;
+
                 # tính HSPLTN:
                 for p in params_hspltn:
                     if item.TRACHNHIEM <= p.ID_TRACHNHIEM:
                         kl.HSPLTN = p.HESO
                         break
 
+                if kl.HSPLTN is None or kl.HSPLTN == 0.0: kl.HSPLTN =1
+                if kl.HSPLVP is None or kl.HSPLVP == 0.0: kl.HSPLVP = 1
                 kl.SOLUONG_NHOM = kl.HSPLTN * kl.HSPLVP
                 _tmp_qlt_hsvp_nhoms.append(kl)
 
@@ -125,8 +128,6 @@ class qlt_hsvp_xhdn:
             kl.NK_XK = item[0][1]
             kl.SOLUONG_NHOM = item[1]
             _qlt_hsvp_nhoms.append(kl)
-
-        #_qlt_hsvp_nhoms = _tmp_qlt_hsvp_nhoms
 
         return _qlt_hsvp_nhoms;
 
@@ -272,14 +273,6 @@ class qlt_hsvp_nhom:
         self.HSPLVP = 0.0
         self.HSPLTN = 0.0
         self.SOLUONG_NHOM = 0.0
-
-
-    #
-    # @property
-    # def SOLUONG_NHOM(self):
-    #     if self.HSPLVP == 0 : self.HSPLVP = 1
-    #     if self.HSPLTN == 0 : self.HSPLTN = 1
-    #     return self.HSPLVP * self.HSPLVP
 
 class qlt_hsvp_phanloai_nhom:
     def __init__(self):

@@ -5,20 +5,17 @@ import logging
 logger = logging.getLogger(__name__)
 from typing import List
 
-from services.crmsservices import *
 from utils.constants import *
+from services.crmsservices import *
 from datamodels.crms.qlt_hsdn_xhdn import  *
 from datamodels.crms.qlt_params import *
 
 class process_rank_hsdn:
     def __init__(self, _lstHSDNs : [], _params_hsdn : {}):
-        #self._srvcrms = crmsservice()
         self._hsdn_params = _params_hsdn
         self._HSDNs = _lstHSDNs
-        #self.qlt_hsdn_xhdns : List[qlt_hsdn_xhdn] = []
 
     # thực hiện tính điểm, điểm phạt, điểm max của danh sách doanh nghiệp theo tiêu chí
-
     def process_qlt_hsdn_xhdn(self):
         _qlt_hsdn_xhdns: List[qlt_hsdn_xhdn] = []
 

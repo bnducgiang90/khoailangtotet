@@ -13,7 +13,11 @@ logger = logging.getLogger(__name__)
 class crmsdb:
     def __init__(self):
         self.db = oracledb()
+        logger.info("====================================")
+        logger.info("====================================")
         logger.info("Database connected")
+
+
 
 #Get ID_PHIENBAN, ID_LYDOXEPHANG:
     def get_next_id_phienban(self):
@@ -28,6 +32,22 @@ class crmsdb:
             logger.exception("Lỗi :")
         finally:
             logger.info("Kết thúc - lấy thông tin SP_PhienBan_GetNextID")
+
+        return _id_phienban
+
+    #get id phien ban current: phục vụ tính điểm lại
+    def get_current_id_phienban(self):
+        _id_phienban = 0
+        try:
+
+            logger.info("Bắt đầu - lấy thông tin SP_PhienBan_GetCurrentID")
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_PhienBan_GetCurrentID")
+            _id_phienban = result["data"][0][0]
+
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("Kết thúc - lấy thông tin SP_PhienBan_GetCurrentID")
 
         return _id_phienban
 
@@ -60,6 +80,15 @@ class crmsdb:
             logger.info("Kết thúc - lấy thông tin SP_XHDN_TH_GetID")
 
         return _id
+
+    def XHDN_TH_Update(self, id):
+        try:
+            logger.info("Bắt đầu - Update thông tin XHDN_TH_Update")
+            self.db.execprocnoquery("CRMS.PKG_XHDN_V2.SP_XHDN_TH_Update", p_ID = id)
+        except Exception as ex:
+            logger.exception("Lỗi :")
+        finally:
+            logger.info("Kết thúc - Update thông tin XHDN_TH_Update")
 
 # Insert thông tin QLT_TMP_XEPHANGDN_20 (:ID_PHIENBAN,:MADN,:DIEMPHANLOAINK,:DIEMPHANLOAIXK,:HANGNK,:HANGXK, :ID_LYDOXEPHANG)
     def insert_qlt_tmp_xephangdn(self, datas):
@@ -122,7 +151,6 @@ class crmsdb:
             cols = result["col"]
             datas = result["data"]
             lstHSDNs = []  # khởi tạo một list QLT_THONGTINDOANHNGHIEP
-            objHSDN = None
             for row in datas:
                 objHSDN = QLT_THONGTINDOANHNGHIEP()
                 helper.toObject(cols, row, objHSDN)
@@ -144,7 +172,7 @@ class crmsdb:
             cols = result["col"]
             datas = result["data"]
             lstPARAMS = []  # khởi tạo một list QLT_PARAMS_HSDN_TC_MOTA
-            objParam = None
+            #objParam = None
             for row in datas:
                 objParam = QLT_PARAMS_HSDN_TC_MOTA()
                 helper.toObject(cols, row, objParam)
@@ -158,7 +186,7 @@ class crmsdb:
             cols = result["col"]
             datas = result["data"]
             lstPARAMS = []  # khởi tạo một list QLT_PARAMS_HSDN_DGTC
-            objParam = None
+            #objParam = None
             for row in datas:
                 objParam = QLT_PARAMS_HSDN_DGTC()
                 helper.toObject(cols, row, objParam)
@@ -172,7 +200,7 @@ class crmsdb:
             cols = result["col"]
             datas = result["data"]
             lstPARAMS = []  # khởi tạo một list QLT_PARAMS_HSDN_PLDCC
-            objParam = None
+            #objParam = None
             for row in datas:
                 objParam = QLT_PARAMS_HSDN_PLDCC()
                 helper.toObject(cols, row, objParam)
@@ -186,7 +214,7 @@ class crmsdb:
             cols = result["col"]
             datas = result["data"]
             lstPARAMS = []  # khởi tạo một list QLT_PARAMS_HSDN_PTAD
-            objParam = None
+            #objParam = None
             for row in datas:
                 objParam = QLT_PARAMS_HSDN_PTAD()
                 helper.toObject(cols, row, objParam)
@@ -194,6 +222,13 @@ class crmsdb:
 
             hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PTAD] = lstPARAMS
             # END QLT_PARAMS_HSDN_PLDCC
+
+            # 5. lấy MIN ID, MAX ID QLT_THONGTINDOANHNGHIEP
+            result = self.db.execproc("CRMS.PKG_XHDN_V2.SP_GetMinMaxID")
+            cols = result["col"]
+            datas = result["data"]
+            hsdn_params[const_hsdn_params.QLT_MIN_MAX_ID] = (datas[0][cols["ROW_MIN_ID"]], datas[0][cols["ROW_MAX_ID"]])
+            # END lấy MIN ID, MAX ID QLT_THONGTINDOANHNGHIEP
 
             return hsdn_params
         except Exception as ex:

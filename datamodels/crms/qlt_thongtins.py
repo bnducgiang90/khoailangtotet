@@ -66,8 +66,13 @@ class QLT_THONGTINVIPHAM:
         self.CHENHLECHTHUE_KHAC = 0.0
         self.NK_XK = 0
 
+    def getvalue(self, v):
+        if v is None : v = 0.0
+        return v
+
     @property
     def TONG_CHENHLECHTHUE(self):
-        return sum([self.CHENHLECHTHUE_DUTY, self.CHENHLECHTHUE_VAT, self.CHENHLECHTHUE_TTDB, self.CHENHLECHTHUE_BVMT
-                    , self.CHENHLECHTHUE_TUVE, self.CHENHLECHTHUE_CBPG, self.CHENHLECHTHUE_KHAC
+        return sum([self.getvalue(self.CHENHLECHTHUE_DUTY), self.getvalue(self.CHENHLECHTHUE_VAT), self.getvalue(self.CHENHLECHTHUE_TTDB)
+                    , self.getvalue(self.CHENHLECHTHUE_BVMT), self.getvalue(self.CHENHLECHTHUE_TUVE), self.getvalue(self.CHENHLECHTHUE_CBPG)
+                    , self.getvalue(self.CHENHLECHTHUE_KHAC)
                    ])
