@@ -7,7 +7,7 @@ from typing import List
 
 from utils.constants import *
 from services.crmsservices import *
-from datamodels.crms.qlt_hsdn_xhdn import  *
+from datamodels.crms.qlt_hsdn_xhdn import *
 from datamodels.crms.qlt_params import *
 
 class process_rank_hsdn:

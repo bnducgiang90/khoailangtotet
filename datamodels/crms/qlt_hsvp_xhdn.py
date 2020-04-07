@@ -1,6 +1,6 @@
 import sys
 
-from pyparsing import unicode
+#from pyparsing import unicode
 
 sys.path.append('.') # đoạn này để gọi import root folder của project vào module này : để gọi được đến các folder khác
 import logging
