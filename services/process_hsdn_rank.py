@@ -19,6 +19,7 @@ class process_rank_hsdn:
     def process_qlt_hsdn_xhdn(self):
         _qlt_hsdn_xhdns: List[qlt_hsdn_xhdn] = []
 
+        logger.info("####### Bắt đầu set điểm tiêu chí HSDN ########")
         for qlt_ttdn in self._HSDNs:
             lstKLs = []
 
@@ -42,6 +43,7 @@ class process_rank_hsdn:
 
             objqlt_hsdn_xhdn = qlt_hsdn_xhdn(qlt_ttdn.MA_DN, lstKLs,  self._hsdn_params[const_hsdn_params.QLT_PARAMS_HSDN_PLDCC])
             _qlt_hsdn_xhdns.append(objqlt_hsdn_xhdn)
+        logger.info("####### Kết thúc tính toán điểm tiêu chí HSDN ########")
 
         return _qlt_hsdn_xhdns
 

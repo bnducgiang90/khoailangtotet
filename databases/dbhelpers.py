@@ -30,16 +30,23 @@ class oracledb:
         self.password = oracleconfig.password
         self.conn = None
         self.cur = None
-        #self.logger = Logger(self.__class__.__name__).get() 
+        #self.logger = Logger(self.__class__.__name__).get()
 
     def __connect__(self):
-        self.conn = cx_Oracle.connect(self.username, self.password, self.hostname)
-        self.cur = self.conn.cursor()
+        if self.conn is None or self.__isopen__() == False:
+            self.conn = cx_Oracle.connect(self.username, self.password, self.hostname)
+            self.cur = self.conn.cursor()
+
+    def __isopen__(self):
+        try:
+            return self.conn.ping() is not None
+        except Exception as ex:
+            return False
 
     def __disconnect__(self):
         if self.cur:
             self.cur.close()
-        if self.conn:
+        if self.conn and self.__isopen__() == True:
             self.conn.close()
 
 ## excecute using sqlquery binding:

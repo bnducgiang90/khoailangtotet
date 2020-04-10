@@ -18,6 +18,7 @@ class process_rank_hsvp:
 
     def process_qlt_hsvp_xhdn(self):
         _qlt_hsvp_xhdns: List[qlt_hsvp_xhdn] = []
+        _dic_qlt_hsvp_xhdns: {str, qlt_hsvp_xhdn} = {}
 
         logger.info("========Bắt đầu group tiêu chí HSVP========")
         _qlt_tieuchi_hsvps =  self.qlt_tieuchi_hsvps()
@@ -26,8 +27,9 @@ class process_rank_hsvp:
         for item in _qlt_tieuchi_hsvps:
             kl = qlt_hsvp_xhdn(item.MA_DN, item, self._hsvp_params)
             _qlt_hsvp_xhdns.append(kl)
+            _dic_qlt_hsvp_xhdns[item.MA_DN] = kl
 
-        return _qlt_hsvp_xhdns
+        return (_qlt_hsvp_xhdns, _dic_qlt_hsvp_xhdns)
 
     ## sẽ tối ưu chỗ này : dùng for hơi chậm chuyển thành groupby nhanh vãi
     #@property

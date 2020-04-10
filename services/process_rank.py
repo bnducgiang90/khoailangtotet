@@ -25,7 +25,7 @@ class process_rank:
         self._params_qltxephang = self._srvcrms.get_params_plxephangs()
         self._dict_qlt_hsvp_xhdns = {}
 
-    ## tính toán xhdn
+   ## tính toán xhdn
     def qlt_xhdn(self):
         try:
             _ID_TH = self._srvcrms.get_XHDN_TH_GetID()
@@ -54,9 +54,10 @@ class process_rank:
 
                 ### Đánh giá RANK HSVP:
                 logger.info("------Bắt đầu đánh giá RANK HSVP ---------")
-                self._qlt_hsvp_xhdns = _procs_hsvp_rank.process_qlt_hsvp_xhdn()
+                _tuple = _procs_hsvp_rank.process_qlt_hsvp_xhdn()
+                self._qlt_hsvp_xhdns = _tuple[0] #_procs_hsvp_rank.process_qlt_hsvp_xhdn()
                 logger.info("------Kết thúc đánh giá RANK HSVP ---------")
-                self._dict_qlt_hsvp_xhdns = {item.MA_DN: (item.DIEM_PLCC.DIEM_PLCC_NK, item.DIEM_PLCC.DIEM_PLCC_XK) for item in self._qlt_hsvp_xhdns}
+                self._dict_qlt_hsvp_xhdns = _tuple[1] #{item.MA_DN: (item.DIEM_PLCC.DIEM_PLCC_NK, item.DIEM_PLCC.DIEM_PLCC_XK) for item in self._qlt_hsvp_xhdns}
 
             # 2. tính toán XHDN HSDN
             ### lấy danh sách params HSDN:
@@ -103,11 +104,11 @@ class process_rank:
                     _qlt_xephangdn.DIEMPHANLOAINK = _hsdn.DIEM_PLCC.DIEM_PLCC_NK + _hsdn.DIEM_PLCC.DIEM_PHAT_NK
                     _qlt_xephangdn.DIEMPHANLOAIXK = _hsdn.DIEM_PLCC.DIEM_PLCC_XK + _hsdn.DIEM_PLCC.DIEM_PHAT_XK
 
-                    # _hsvp = [item for item in self._qlt_hsvp_xhdns if item.MA_DN == _hsdn.MA_DN] #
+                    #_hsvp = [item for item in self._qlt_hsvp_xhdns if item.MA_DN == _hsdn.MA_DN]
                     _hsvp = self._dict_qlt_hsvp_xhdns.get(_hsdn.MA_DN)  #[item for item in _qlt_hsvp_xhdns if item.MA_DN == _hsdn.MA_DN]
                     if _hsvp:
-                        _qlt_xephangdn.DIEMPHANLOAINK += _hsvp[0] #_hsvp[0].DIEM_PLCC.DIEM_PLCC_NK
-                        _qlt_xephangdn.DIEMPHANLOAIXK += _hsvp[1] #_hsvp[0].DIEM_PLCC.DIEM_PLCC_XK
+                        _qlt_xephangdn.DIEMPHANLOAINK += _hsvp.DIEM_PLCC.DIEM_PLCC_NK #_hsvp[0]
+                        _qlt_xephangdn.DIEMPHANLOAIXK += _hsvp.DIEM_PLCC.DIEM_PLCC_XK #_hsvp[1]
 
                     ## tính hạng:
                     # NK
@@ -160,6 +161,75 @@ class process_rank:
         finally:
             logger.info("------Kết thúc đánh giá RANK ---------")
 
+    def qlt_xndn_slice(self, _ID_PHIENBAN, _ID_LYDOXEPHANG, _fromRowid, _toRowdid, _hsdn_params):
+        _lstHSDNs = self._srvcrms.get_hsdns(_fromRowid, _toRowdid, 0)
+        _qlt_xephangs_slice: List[QLT_XEPHANGDN_20] = []
+        _lst_lydo_diem_tc_slice: List[QLT_LYDOXEPHANG_HSDN_DIEMTC] = []
+
+        ### khởi tạo process RANK HSDN:
+        _procs_hsdn_rank = process_rank_hsdn(_lstHSDNs, _hsdn_params)
+
+        ### Đánh giá RANK HSDN:
+        logger.info("------Bắt đầu đánh giá RANK HSDN ---------")
+        _qlt_hsdn_xhdns_slice: List[qlt_hsdn_xhdn] = _procs_hsdn_rank.process_qlt_hsdn_xhdn()
+        logger.info("------Kết thúc đánh giá RANK HSDN ---------")
+
+        # 3. Cộng điểm HSDN + HSVP để thực hiện xếp RANK:
+        logger.info("------Bắt đầu xếp cộng điểm HSDN + HSVP  + xếp RANK---------")
+
+        for _hsdn in _qlt_hsdn_xhdns_slice:
+            _qlt_xephangdn = QLT_XEPHANGDN_20()
+            _qlt_xephangdn.MADN = _hsdn.MA_DN
+            _qlt_xephangdn.ID_PHIENBAN = _ID_PHIENBAN
+            _qlt_xephangdn.ID_LYDOXEPHANG = _ID_LYDOXEPHANG
+            _qlt_xephangdn.DIEMPHANLOAINK = _hsdn.DIEM_PLCC.DIEM_PLCC_NK + _hsdn.DIEM_PLCC.DIEM_PHAT_NK
+            _qlt_xephangdn.DIEMPHANLOAIXK = _hsdn.DIEM_PLCC.DIEM_PLCC_XK + _hsdn.DIEM_PLCC.DIEM_PHAT_XK
+
+            # _hsvp = [item for item in self._qlt_hsvp_xhdns if item.MA_DN == _hsdn.MA_DN] #
+            _hsvp = self._dict_qlt_hsvp_xhdns.get(
+                _hsdn.MA_DN)  # [item for item in _qlt_hsvp_xhdns if item.MA_DN == _hsdn.MA_DN]
+            if _hsvp:
+                _qlt_xephangdn.DIEMPHANLOAINK += _hsvp[0]  # _hsvp[0].DIEM_PLCC.DIEM_PLCC_NK
+                _qlt_xephangdn.DIEMPHANLOAIXK += _hsvp[1]  # _hsvp[0].DIEM_PLCC.DIEM_PLCC_XK
+
+            ## tính hạng:
+            # NK
+            for p in [item for item in self._params_qltxephang if item.NK_XK == const_crms.LOAI_HINH_NK]:
+                if _qlt_xephangdn.DIEMPHANLOAINK <= p.GIATRI:
+                    _qlt_xephangdn.HANGNK = p.HANG
+                    break
+            # XK
+            for p in [item for item in self._params_qltxephang if item.NK_XK == const_crms.LOAI_HINH_XK]:
+                if _qlt_xephangdn.DIEMPHANLOAIXK <= p.GIATRI:
+                    _qlt_xephangdn.HANGXK = p.HANG
+                    break
+
+            _qlt_xephangs_slice.append(_qlt_xephangdn)
+
+            ##tính điểm tiêu chí:
+            for _tc in _hsdn.qlt_tieuchi_hsdns:
+                _lydo_diem_tc = QLT_LYDOXEPHANG_HSDN_DIEMTC()
+                _lydo_diem_tc.NK_XK = _tc.NK_XK
+                _lydo_diem_tc.ID_PHIENBAN = _ID_PHIENBAN
+                _lydo_diem_tc.MADN = _hsdn.MA_DN
+                _lydo_diem_tc.ID_TIEUCHI = _tc.ID_TIEUCHI
+                _lydo_diem_tc.DIEM = _tc.DIEM
+                _lydo_diem_tc.DIEMPHAT = _tc.DIEMPHAT
+                _lst_lydo_diem_tc_slice.append(_lydo_diem_tc)
+
+        logger.info("------Kết thúc xếp cộng điểm HSDN + HSVP  + xếp RANK---------")
+
+        logger.info("------Bắt đầu ghi kết quả xếp RANK vào bảng Trung gian---------")
+        self._srvcrms.insert_qlt_tmp_xephangdn(_qlt_xephangs_slice)
+        _qlt_xephangs_slice = []
+        logger.info("------Kết thúc ghi kết quả xếp RANK vào bảng Trung gian---------")
+
+        # 4. Ghi lý do điểm hsdn:
+        logger.info("------Bắt đầu ghi lý do Điểm tiêu chí xếp RANK HSDN---------")
+        self._srvcrms.insert_hsdn_lydoxephang_diemtc(_lst_lydo_diem_tc_slice)
+        logger.info("------Kết thúc ghi lý do Điểm tiêu chí xếp RANK HSDN số lượng bản ghi: {}---------".format(
+            len(_lst_lydo_diem_tc_slice)))
+        _lst_lydo_diem_tc_slice = []
 
 # hiển thị biểu  đồ
 # x = np.linspace(0, 20, 100)  # Create a list of evenly-spaced numbers over the range
